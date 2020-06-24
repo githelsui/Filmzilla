@@ -1,0 +1,6 @@
+framework module Pods_Filmzilla {
+  umbrella header "Pods-Filmzilla-umbrella.h"
+
+  export *
+  module * { export * }
+}

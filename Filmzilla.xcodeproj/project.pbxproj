@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E3E388A97ADE1099F99FE5 /* Pods_FilmzillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804DB536E0C73E5A9BFFA693 /* Pods_FilmzillaTests.framework */; };
+		7E5154C45136E1237D76A903 /* Pods_Filmzilla_FilmzillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF864730F2C1905A2A3596 /* Pods_Filmzilla_FilmzillaUITests.framework */; };
+		884EE63FC57FE98AD6FFE31E /* Pods_Filmzilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5844830DC181569CEF23204 /* Pods_Filmzilla.framework */; };
 		CA893ECF24A3C754002B7117 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893ECE24A3C754002B7117 /* AppDelegate.m */; };
 		CA893ED224A3C754002B7117 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893ED124A3C754002B7117 /* SceneDelegate.m */; };
-		CA893ED524A3C754002B7117 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893ED424A3C754002B7117 /* ViewController.m */; };
 		CA893ED824A3C754002B7117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA893ED624A3C754002B7117 /* Main.storyboard */; };
 		CA893EDA24A3C755002B7117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA893ED924A3C755002B7117 /* Assets.xcassets */; };
 		CA893EDD24A3C755002B7117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA893EDB24A3C755002B7117 /* LaunchScreen.storyboard */; };
 		CA893EE024A3C755002B7117 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893EDF24A3C755002B7117 /* main.m */; };
 		CA893EEA24A3C755002B7117 /* FilmzillaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893EE924A3C755002B7117 /* FilmzillaTests.m */; };
 		CA893EF524A3C755002B7117 /* FilmzillaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893EF424A3C755002B7117 /* FilmzillaUITests.m */; };
+		CA893F0424A3D22B002B7117 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893F0324A3D22B002B7117 /* MoviesViewController.m */; };
+		CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893F0924A3FED3002B7117 /* MovieCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05C98693F8B73422971E271D /* Pods-FilmzillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmzillaTests.release.xcconfig"; path = "Target Support Files/Pods-FilmzillaTests/Pods-FilmzillaTests.release.xcconfig"; sourceTree = "<group>"; };
+		1336E71C483B15422829721E /* Pods-Filmzilla-FilmzillaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmzilla-FilmzillaUITests.release.xcconfig"; path = "Target Support Files/Pods-Filmzilla-FilmzillaUITests/Pods-Filmzilla-FilmzillaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		51205690FCBBB8F4880CC78D /* Pods-Filmzilla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmzilla.release.xcconfig"; path = "Target Support Files/Pods-Filmzilla/Pods-Filmzilla.release.xcconfig"; sourceTree = "<group>"; };
+		6DDF864730F2C1905A2A3596 /* Pods_Filmzilla_FilmzillaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filmzilla_FilmzillaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		804DB536E0C73E5A9BFFA693 /* Pods_FilmzillaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmzillaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F680E3F14886E4531AC3C6 /* Pods-Filmzilla-FilmzillaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmzilla-FilmzillaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Filmzilla-FilmzillaUITests/Pods-Filmzilla-FilmzillaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5844830DC181569CEF23204 /* Pods_Filmzilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filmzilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C87C010C4FE660A6EAA8828E /* Pods-FilmzillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmzillaTests.debug.xcconfig"; path = "Target Support Files/Pods-FilmzillaTests/Pods-FilmzillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA893ECA24A3C754002B7117 /* Filmzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filmzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA893ECD24A3C754002B7117 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA893ECE24A3C754002B7117 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CA893ED024A3C754002B7117 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		CA893ED124A3C754002B7117 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		CA893ED324A3C754002B7117 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CA893ED424A3C754002B7117 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA893ED724A3C754002B7117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA893ED924A3C755002B7117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA893EDC24A3C755002B7117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +64,11 @@
 		CA893EF024A3C755002B7117 /* FilmzillaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilmzillaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA893EF424A3C755002B7117 /* FilmzillaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilmzillaUITests.m; sourceTree = "<group>"; };
 		CA893EF624A3C755002B7117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA893F0224A3D22B002B7117 /* MoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		CA893F0324A3D22B002B7117 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
+		CA893F0824A3FED3002B7117 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		CA893F0924A3FED3002B7117 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		D82987F7A3AEBFB01DDEAFEF /* Pods-Filmzilla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmzilla.debug.xcconfig"; path = "Target Support Files/Pods-Filmzilla/Pods-Filmzilla.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884EE63FC57FE98AD6FFE31E /* Pods_Filmzilla.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E3E388A97ADE1099F99FE5 /* Pods_FilmzillaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +92,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5154C45136E1237D76A903 /* Pods_Filmzilla_FilmzillaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6EB42F051AE819EE7143296 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5844830DC181569CEF23204 /* Pods_Filmzilla.framework */,
+				6DDF864730F2C1905A2A3596 /* Pods_Filmzilla_FilmzillaUITests.framework */,
+				804DB536E0C73E5A9BFFA693 /* Pods_FilmzillaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C58BD07000D6CF33FF5264D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D82987F7A3AEBFB01DDEAFEF /* Pods-Filmzilla.debug.xcconfig */,
+				51205690FCBBB8F4880CC78D /* Pods-Filmzilla.release.xcconfig */,
+				B3F680E3F14886E4531AC3C6 /* Pods-Filmzilla-FilmzillaUITests.debug.xcconfig */,
+				1336E71C483B15422829721E /* Pods-Filmzilla-FilmzillaUITests.release.xcconfig */,
+				C87C010C4FE660A6EAA8828E /* Pods-FilmzillaTests.debug.xcconfig */,
+				05C98693F8B73422971E271D /* Pods-FilmzillaTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CA893EC124A3C754002B7117 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +130,8 @@
 				CA893EE824A3C755002B7117 /* FilmzillaTests */,
 				CA893EF324A3C755002B7117 /* FilmzillaUITests */,
 				CA893ECB24A3C754002B7117 /* Products */,
+				C58BD07000D6CF33FF5264D6 /* Pods */,
+				B6EB42F051AE819EE7143296 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,13 +152,15 @@
 				CA893ECE24A3C754002B7117 /* AppDelegate.m */,
 				CA893ED024A3C754002B7117 /* SceneDelegate.h */,
 				CA893ED124A3C754002B7117 /* SceneDelegate.m */,
-				CA893ED324A3C754002B7117 /* ViewController.h */,
-				CA893ED424A3C754002B7117 /* ViewController.m */,
+				CA893F0224A3D22B002B7117 /* MoviesViewController.h */,
+				CA893F0324A3D22B002B7117 /* MoviesViewController.m */,
 				CA893ED624A3C754002B7117 /* Main.storyboard */,
 				CA893ED924A3C755002B7117 /* Assets.xcassets */,
 				CA893EDB24A3C755002B7117 /* LaunchScreen.storyboard */,
 				CA893EDE24A3C755002B7117 /* Info.plist */,
 				CA893EDF24A3C755002B7117 /* main.m */,
+				CA893F0824A3FED3002B7117 /* MovieCell.h */,
+				CA893F0924A3FED3002B7117 /* MovieCell.m */,
 			);
 			path = Filmzilla;
 			sourceTree = "<group>";
@@ -144,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA893EF924A3C755002B7117 /* Build configuration list for PBXNativeTarget "Filmzilla" */;
 			buildPhases = (
+				4EDA8D6F73E4E02DFEA8DC0C /* [CP] Check Pods Manifest.lock */,
 				CA893EC624A3C754002B7117 /* Sources */,
 				CA893EC724A3C754002B7117 /* Frameworks */,
 				CA893EC824A3C754002B7117 /* Resources */,
+				55BEC6ADE719C1B98117BF2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA893EFC24A3C755002B7117 /* Build configuration list for PBXNativeTarget "FilmzillaTests" */;
 			buildPhases = (
+				0E6C0BB22AFBEA858DD7F2D9 /* [CP] Check Pods Manifest.lock */,
 				CA893EE124A3C755002B7117 /* Sources */,
 				CA893EE224A3C755002B7117 /* Frameworks */,
 				CA893EE324A3C755002B7117 /* Resources */,
@@ -179,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA893EFF24A3C755002B7117 /* Build configuration list for PBXNativeTarget "FilmzillaUITests" */;
 			buildPhases = (
+				CB53748E860C6D4D1BFCD1F8 /* [CP] Check Pods Manifest.lock */,
 				CA893EEC24A3C755002B7117 /* Sources */,
 				CA893EED24A3C755002B7117 /* Frameworks */,
 				CA893EEE24A3C755002B7117 /* Resources */,
+				B0EDF94B4918EA6A0A17B92D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,13 +313,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E6C0BB22AFBEA858DD7F2D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilmzillaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EDA8D6F73E4E02DFEA8DC0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Filmzilla-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55BEC6ADE719C1B98117BF2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Filmzilla/Pods-Filmzilla-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Filmzilla/Pods-Filmzilla-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Filmzilla/Pods-Filmzilla-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0EDF94B4918EA6A0A17B92D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Filmzilla-FilmzillaUITests/Pods-Filmzilla-FilmzillaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Filmzilla-FilmzillaUITests/Pods-Filmzilla-FilmzillaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Filmzilla-FilmzillaUITests/Pods-Filmzilla-FilmzillaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB53748E860C6D4D1BFCD1F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Filmzilla-FilmzillaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CA893EC624A3C754002B7117 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA893ED524A3C754002B7117 /* ViewController.m in Sources */,
 				CA893ECF24A3C754002B7117 /* AppDelegate.m in Sources */,
+				CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */,
+				CA893F0424A3D22B002B7117 /* MoviesViewController.m in Sources */,
 				CA893EE024A3C755002B7117 /* main.m in Sources */,
 				CA893ED224A3C754002B7117 /* SceneDelegate.m in Sources */,
 			);
@@ -437,6 +592,7 @@
 		};
 		CA893EFA24A3C755002B7117 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D82987F7A3AEBFB01DDEAFEF /* Pods-Filmzilla.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +609,7 @@
 		};
 		CA893EFB24A3C755002B7117 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51205690FCBBB8F4880CC78D /* Pods-Filmzilla.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -469,6 +626,7 @@
 		};
 		CA893EFD24A3C755002B7117 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C87C010C4FE660A6EAA8828E /* Pods-FilmzillaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +646,7 @@
 		};
 		CA893EFE24A3C755002B7117 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C98693F8B73422971E271D /* Pods-FilmzillaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +666,7 @@
 		};
 		CA893F0024A3C755002B7117 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F680E3F14886E4531AC3C6 /* Pods-Filmzilla-FilmzillaUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilmzillaUITests/Info.plist;
@@ -524,6 +684,7 @@
 		};
 		CA893F0124A3C755002B7117 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1336E71C483B15422829721E /* Pods-Filmzilla-FilmzillaUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilmzillaUITests/Info.plist;
