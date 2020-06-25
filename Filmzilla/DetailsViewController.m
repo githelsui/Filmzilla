@@ -26,6 +26,7 @@
     [self loadPoster];
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
+    [self.synopsisLabel sizeToFit];
     self.posterView.layer.cornerRadius = 25;
     self.posterView.layer.masksToBounds = true;
     self.detailsView.layer.cornerRadius = 40;
