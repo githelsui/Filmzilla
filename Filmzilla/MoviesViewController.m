@@ -87,7 +87,7 @@
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
     cell.posterView.image = nil;
-    cell.posterView.layer.cornerRadius = 25;
+    cell.posterView.layer.cornerRadius = 35;
     cell.posterView.layer.masksToBounds = true;
     [cell.posterView setImageWithURL:posterURL];
     cell.descView.layer.cornerRadius = 35;
