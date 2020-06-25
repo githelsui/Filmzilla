@@ -20,6 +20,8 @@
 		CA893EF524A3C755002B7117 /* FilmzillaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893EF424A3C755002B7117 /* FilmzillaUITests.m */; };
 		CA893F0424A3D22B002B7117 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893F0324A3D22B002B7117 /* MoviesViewController.m */; };
 		CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893F0924A3FED3002B7117 /* MovieCell.m */; };
+		CA9409C824A45F5F000558FC /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409C724A45F5F000558FC /* MoviesGridViewController.m */; };
+		CA9409CB24A46236000558FC /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409CA24A46236000558FC /* MovieCollectionCell.m */; };
 		CAF29AB424A43F3A004AC1CF /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF29AB324A43F39004AC1CF /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,10 @@
 		CA893F0324A3D22B002B7117 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		CA893F0824A3FED3002B7117 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		CA893F0924A3FED3002B7117 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		CA9409C624A45F5F000558FC /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
+		CA9409C724A45F5F000558FC /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
+		CA9409C924A46236000558FC /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
+		CA9409CA24A46236000558FC /* MovieCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
 		CAF29AB224A43F39004AC1CF /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		CAF29AB324A43F39004AC1CF /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		D82987F7A3AEBFB01DDEAFEF /* Pods-Filmzilla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmzilla.debug.xcconfig"; path = "Target Support Files/Pods-Filmzilla/Pods-Filmzilla.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,21 +156,25 @@
 		CA893ECC24A3C754002B7117 /* Filmzilla */ = {
 			isa = PBXGroup;
 			children = (
+				CA893ED624A3C754002B7117 /* Main.storyboard */,
+				CA893EDB24A3C755002B7117 /* LaunchScreen.storyboard */,
 				CA893ECD24A3C754002B7117 /* AppDelegate.h */,
 				CA893ECE24A3C754002B7117 /* AppDelegate.m */,
 				CA893ED024A3C754002B7117 /* SceneDelegate.h */,
 				CA893ED124A3C754002B7117 /* SceneDelegate.m */,
 				CA893F0224A3D22B002B7117 /* MoviesViewController.h */,
 				CA893F0324A3D22B002B7117 /* MoviesViewController.m */,
-				CA893ED624A3C754002B7117 /* Main.storyboard */,
-				CA893ED924A3C755002B7117 /* Assets.xcassets */,
-				CA893EDB24A3C755002B7117 /* LaunchScreen.storyboard */,
-				CA893EDE24A3C755002B7117 /* Info.plist */,
-				CA893EDF24A3C755002B7117 /* main.m */,
 				CA893F0824A3FED3002B7117 /* MovieCell.h */,
 				CA893F0924A3FED3002B7117 /* MovieCell.m */,
 				CAF29AB224A43F39004AC1CF /* DetailsViewController.h */,
 				CAF29AB324A43F39004AC1CF /* DetailsViewController.m */,
+				CA9409C624A45F5F000558FC /* MoviesGridViewController.h */,
+				CA9409C724A45F5F000558FC /* MoviesGridViewController.m */,
+				CA893EDE24A3C755002B7117 /* Info.plist */,
+				CA893EDF24A3C755002B7117 /* main.m */,
+				CA893ED924A3C755002B7117 /* Assets.xcassets */,
+				CA9409C924A46236000558FC /* MovieCollectionCell.h */,
+				CA9409CA24A46236000558FC /* MovieCollectionCell.m */,
 			);
 			path = Filmzilla;
 			sourceTree = "<group>";
@@ -429,8 +439,10 @@
 				CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */,
 				CA893F0424A3D22B002B7117 /* MoviesViewController.m in Sources */,
 				CAF29AB424A43F3A004AC1CF /* DetailsViewController.m in Sources */,
+				CA9409CB24A46236000558FC /* MovieCollectionCell.m in Sources */,
 				CA893EE024A3C755002B7117 /* main.m in Sources */,
 				CA893ED224A3C754002B7117 /* SceneDelegate.m in Sources */,
+				CA9409C824A45F5F000558FC /* MoviesGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -80,21 +81,57 @@
             </objects>
             <point key="canvasLocation" x="132" y="879"/>
         </scene>
-        <!--View Controller-->
+        <!--Movies Grid View Controller-->
         <scene sceneID="9xr-vI-Hf3">
             <objects>
-                <viewController id="Inh-HO-4wH" sceneMemberID="viewController">
+                <viewController id="Inh-HO-4wH" customClass="MoviesGridViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jKV-f7-NOY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kwm-cD-cQs">
+                                <rect key="frame" x="0.0" y="52" width="414" height="884"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QPE-ev-Cdu">
+                                    <size key="itemSize" width="199" height="348"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionCell" id="Y96-ia-xvl" customClass="MovieCollectionCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="348"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mef-W1-DbD">
+                                            <rect key="frame" x="0.0" y="0.0" width="199" height="348"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-Mj-vkn">
+                                                    <rect key="frame" x="0.0" y="-8" width="216" height="376"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="199" height="348"/>
+                                        <connections>
+                                            <outlet property="posterView" destination="Jae-Mj-vkn" id="8vE-or-mdS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="xbT-7s-aLB"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Ew-89-K2q"/>
+                    <connections>
+                        <outlet property="collectionView" destination="kwm-cD-cQs" id="WRx-HB-S05"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJR-KL-fVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="872"/>
+            <point key="canvasLocation" x="1246.376811594203" y="871.875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8nX-Bs-sXt">
@@ -219,9 +256,9 @@
         <!--Item-->
         <scene sceneID="bKV-Rg-fni">
             <objects>
-                <navigationController id="8dC-wT-hiz" sceneMemberID="viewController">
+                <navigationController id="8dC-wT-hiz" customClass="MoviesG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="8pX-0g-MHl"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VZw-dP-ESs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VZw-dP-ESs" customClass="Movie">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

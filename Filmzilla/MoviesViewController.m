@@ -65,7 +65,7 @@
                       NSLog(@"%@", movie[@"title"]);
                   }
                   
-                  [self.tableView reloadData]; //call datasource methods again
+                  [self.tableView reloadData]; //reloadData method: call datasource methods again
               }
            [self.refreshControl endRefreshing];
           }];
@@ -80,13 +80,12 @@
     
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     NSDictionary *movie = self.movies[indexPath.row];
-    cell.titleLabel.text = movie[@"title"];
-    cell.synopsisLabel.text = movie[@"overview"];
-    
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    cell.titleLabel.text = movie[@"title"];
+    cell.synopsisLabel.text = movie[@"overview"];
     cell.posterView.image = nil;
     cell.posterView.layer.cornerRadius = 25;
     cell.posterView.layer.masksToBounds = true;
