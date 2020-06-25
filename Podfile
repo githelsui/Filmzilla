@@ -7,6 +7,7 @@ target 'Filmzilla' do
 
   # Pods for Filmzilla
     pod 'AFNetworking'
+    pod 'SVProgressHUD'
 
   target 'FilmzillaTests' do
     inherit! :search_paths

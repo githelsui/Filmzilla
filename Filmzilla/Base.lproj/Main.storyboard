@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bgf-eT-O8r">
-                                                    <rect key="frame" x="20" y="24" width="374" height="552"/>
+                                                    <rect key="frame" x="20" y="43" width="374" height="533"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,12 +125,17 @@
                                 <rect key="frame" x="236" y="211" width="149" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ECU-m4-gfR">
+                                <rect key="frame" x="197" y="439" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="2Xp-4b-oBy"/>
                     </view>
                     <navigationItem key="navigationItem" id="NYh-se-FXt"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="ECU-m4-gfR" id="TS0-XQ-WJ0"/>
                         <outlet property="backdropView" destination="lwg-zh-WZg" id="QAN-DP-f4L"/>
                         <outlet property="detailsView" destination="Ftp-wf-gxg" id="hqK-sb-lcA"/>
                         <outlet property="posterView" destination="7kw-fc-EgC" id="KU1-fX-4s5"/>

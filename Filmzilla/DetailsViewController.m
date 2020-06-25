@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UIView *detailsView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -22,8 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.activityIndicator startAnimating];
     [self loadBackDrop];
     [self loadPoster];
+    [self.activityIndicator stopAnimating];
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
     [self.synopsisLabel sizeToFit];
@@ -31,6 +34,8 @@
     self.posterView.layer.masksToBounds = true;
     self.detailsView.layer.cornerRadius = 40;
     self.detailsView.layer.masksToBounds = true;
+    
+    
 }
 
 - (void) loadBackDrop {
@@ -48,6 +53,7 @@
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [self.posterView setImageWithURL:posterURL];
 }
+
 
 /*
 #pragma mark - Navigation
