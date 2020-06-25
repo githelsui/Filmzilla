@@ -24,6 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
+           message:@"Cannot fetch movies"
+    preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {}];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
