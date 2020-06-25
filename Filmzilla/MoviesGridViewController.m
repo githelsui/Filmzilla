@@ -8,6 +8,7 @@
 
 #import "MoviesGridViewController.h"
 #import "MovieCollectionCell.h"
+#import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -38,7 +39,7 @@
 }
 
 - (void)fetchMovies {
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=37b02cea57828b7f45f8799e5aa0d345"];
+    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/popular?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US"];
        
        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
        
@@ -77,19 +78,30 @@
      NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
      NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
      [cell.posterView setImageWithURL:posterURL];
+    cell.layer.borderColor = UIColor.whiteColor.CGColor;
+    cell.layer.borderWidth = 3;
     return cell;
 }
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UICollectionViewCell *tappedCell = sender;
+       NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+       
+       NSDictionary *movie = self.movies[indexPath.row];
+       
+       
+       DetailsViewController *detailsViewController = [segue destinationViewController];
+       detailsViewController.movie = movie;
+       NSLog(@"Tapping on a movie!");
 }
-*/
+
 
 @end

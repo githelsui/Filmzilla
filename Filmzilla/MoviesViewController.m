@@ -35,7 +35,7 @@
         [alert addAction:okAction];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-         self.tableView.dataSource = self;
+           self.tableView.dataSource = self;
            self.tableView.delegate = self;
            
            [self fetchMovies];
@@ -93,10 +93,10 @@
     cell.descView.layer.cornerRadius = 35;
     cell.descView.layer.masksToBounds = true;
     return cell;
+    
 }
 
-- (BOOL)connected
-{
+- (BOOL)connected{
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     return networkStatus != NotReachable;

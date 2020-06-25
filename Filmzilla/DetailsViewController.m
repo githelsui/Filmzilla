@@ -23,10 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.activityIndicator startAnimating];
     [self loadBackDrop];
     [self loadPoster];
-    [self.activityIndicator stopAnimating];
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
     [self.synopsisLabel sizeToFit];
@@ -39,19 +37,23 @@
 }
 
 - (void) loadBackDrop {
+     [self.activityIndicator startAnimating];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *backdropURLString = self.movie[@"backdrop_path"];
     NSString *fullBackDropURLString = [baseURLString stringByAppendingString:backdropURLString];
     NSURL *backdropURL = [NSURL URLWithString:fullBackDropURLString];
     [self.backdropView setImageWithURL:backdropURL];
+    [self.activityIndicator stopAnimating];
 }
 
 - (void) loadPoster {
+    [self.activityIndicator startAnimating];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = self.movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [self.posterView setImageWithURL:posterURL];
+    [self.activityIndicator stopAnimating];
 }
 
 
