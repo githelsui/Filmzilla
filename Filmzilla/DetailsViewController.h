@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSDictionary *movie;
 @property (nonatomic, strong) NSMutableArray *watchList;
+- (IBAction)trailerTapped:(UIGestureRecognizer *)sender;
 
 @end
 

@@ -386,6 +386,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-fc-EgC">
                                 <rect key="frame" x="236" y="211" width="149" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6zE-yU-xup" appends="YES" id="RvM-rb-IEP"/>
+                                </connections>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ECU-m4-gfR">
                                 <rect key="frame" x="197" y="439" width="20" height="20"/>
@@ -411,8 +415,40 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORb-ba-hxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6zE-yU-xup">
+                    <connections>
+                        <action selector="posterTapped:" destination="R4O-1t-7A9" id="gZa-eq-kcK"/>
+                        <segue destination="0qF-ZI-7Yy" kind="presentation" identifier="TrailerSegue" id="8xa-2V-bbW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="1721.6517857142856"/>
+            <point key="canvasLocation" x="-717" y="1714"/>
+        </scene>
+        <!--TrailerController-->
+        <scene sceneID="NiA-ly-Bwh">
+            <objects>
+                <viewController title="TrailerController" id="0qF-ZI-7Yy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0u0-NN-fDk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxH-mJ-Wg3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VI9-ii-78f"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqM-8x-kG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1590" y="2531"/>
         </scene>
         <!--Review Controller-->
         <scene sceneID="mOc-lS-ozs">
@@ -485,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgz-Sn-ub1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="2443.5267857142858"/>
+            <point key="canvasLocation" x="-175" y="2531"/>
         </scene>
         <!--Review Controller-->
         <scene sceneID="529-Z1-CYv">
@@ -557,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="si6-mo-xgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244.9275362318842" y="2450.8928571428569"/>
+            <point key="canvasLocation" x="704" y="2531"/>
         </scene>
         <!--Review Controller-->
         <scene sceneID="TKQ-FQ-qKp">
@@ -630,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKX-jR-q6d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441" y="2451"/>
+            <point key="canvasLocation" x="3416" y="2531"/>
         </scene>
         <!--Item-->
         <scene sceneID="sZi-eF-Ybc">

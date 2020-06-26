@@ -68,6 +68,7 @@
 }
 
 - (void) loadInfo {
+//    self.posterView.userInteractionEnabled = YES; what to do with this
     self.navigationItem.title = self.movie[@"title"];
     self.posterView.layer.cornerRadius = 25;
     self.posterView.layer.masksToBounds = true;
@@ -96,6 +97,10 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (IBAction)posterTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"%@", self.movie[@"title"]);
+//    [self performSegueWithIdentifier:@"TrailerSegue" sender:nil];
+}
 
 #pragma mark - Navigation
 
@@ -110,4 +115,6 @@
 }
 
 
+- (IBAction)trailerTapped:(id)sender {
+}
 @end

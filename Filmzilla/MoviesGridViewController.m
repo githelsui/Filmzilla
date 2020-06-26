@@ -97,18 +97,13 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length != 0) {
-              //movies = array of all movies (must get @title within one movie)
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject[@"title"] containsString:searchText];
         }];
-        
         self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
-
-        NSLog(@"%@", self.filteredMovies);
-
     }
     else{
-              self.filteredMovies = self.movies;
+        self.filteredMovies = self.movies;
     }
     [self.collectionView reloadData];
 }
