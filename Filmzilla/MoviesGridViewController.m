@@ -14,6 +14,7 @@
 @interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSArray *filteredTitles;
 @property (nonatomic, strong) NSArray *filteredMovies;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -29,19 +30,13 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.searchBar.delegate = self;
-    self.filteredMovies = self.movies;
-    
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    
-    
     CGFloat postersPerLine = 2;
     CGFloat itemWidth = self.collectionView.frame.size.width / postersPerLine;
     CGFloat itemHeight = 1.5 * itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-    
     self.searchView.layer.cornerRadius = 25;
 }
 
@@ -58,9 +53,8 @@
               }
               else { //run if request is successful
                   NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-
-                  NSLog(@"%@", dataDictionary);
                   self.movies = dataDictionary[@"results"];
+                  self.filteredMovies = self.movies;
                   [self.collectionView reloadData];
               }
           
@@ -69,14 +63,14 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.movies.count;
+    return self.filteredMovies.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
-    NSDictionary *movie = self.movies[indexPath.item];
+    NSDictionary *movie = self.filteredMovies[indexPath.item];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
@@ -92,27 +86,21 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length != 0) {
+              //movies = array of all movies (must get @title within one movie)
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject[@"title"] containsString:searchText];
+        }];
+        
+        self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
 
-    NSLog(@"%s", "search edited");
-//TODO: fix search bar (issue: how to search for the title within the array of movies)
-//                    for (NSDictionary *movie in self.movies){
-//                        NSLog(@"%@", movie[@"title"]);
-//                    }
-    
-     if (searchText.length != 0) {
-           //movies = array of all movies (must get @title within one movie)
-           NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *evaluatedObject, NSDictionary *bindings) {
-               return [evaluatedObject containsString:searchText];
-           }];
-         self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
-           
-           NSLog(@"%@", self.filteredMovies);
-           
-       }
-       else {
-           self.filteredMovies = self.movies;
-       }
-       [self.collectionView reloadData];
+        NSLog(@"%@", self.filteredMovies);
+
+    }
+    else{
+              self.filteredMovies = self.movies;
+    }
+    [self.collectionView reloadData];
 }
 
 

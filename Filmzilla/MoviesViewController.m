@@ -61,10 +61,11 @@
               else { //run if request is successful
                   NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                   
-                  NSArray *originalArr = dataDictionary[@"results"];
-                  NSArray *reversedArray = [[originalArr reverseObjectEnumerator] allObjects];
+                  //reverse order of array
+//                  NSArray *originalArr = dataDictionary[@"results"];
+//                  NSArray *reversedArray = [[originalArr reverseObjectEnumerator] allObjects];
                   
-                  self.movies = reversedArray;
+                  self.movies = dataDictionary[@"results"];
                   
                   for (NSDictionary *movie in self.movies){
                       NSLog(@"%@", movie[@"title"]);
