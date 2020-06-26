@@ -54,20 +54,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDj-C1-v9V">
-                                                            <rect key="frame" x="209" y="174" width="56" height="56"/>
+                                                            <rect key="frame" x="159" y="166" width="56" height="56"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="Button" image="icons8-heart-90 (1)"/>
                                                             <connections>
                                                                 <action selector="favBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Vp-1j-tve"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPZ-T1-ikY">
-                                                            <rect key="frame" x="120" y="174" width="48" height="56"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" image="icons8-menu-60"/>
-                                                            <connections>
-                                                                <segue destination="R4O-1t-7A9" kind="show" id="9uQ-Ak-gQa"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -511,13 +503,9 @@
             <point key="canvasLocation" x="1244.9275362318842" y="1713.6160714285713"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6C5-me-bOu"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="icons8-heart-30" width="30" height="30"/>
         <image name="icons8-heart-90 (1)" width="90" height="90"/>
-        <image name="icons8-menu-60" width="60" height="60"/>
         <image name="icons8-parchment-100" width="100" height="100"/>
         <image name="icons8-search-30" width="30" height="30"/>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
