@@ -89,6 +89,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="luj-wW-8AE">
+                                <rect key="frame" x="0.0" y="89" width="414" height="717"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -97,6 +101,7 @@
                     <navigationItem key="navigationItem" title="Filmzilla" id="c91-qo-xO1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="luj-wW-8AE" id="HEY-Wg-Zfi"/>
                         <outlet property="tableView" destination="RWF-NI-Tr0" id="QTi-iQ-t17"/>
                     </connections>
                 </viewController>
@@ -123,6 +128,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="6.5" minY="10" maxX="6.5" maxY="10"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="mTK-JK-eAn">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="MovieCollectionCell" id="Y96-ia-xvl" customClass="MovieCollectionCell">
                                         <rect key="frame" x="6.5" y="10" width="181" height="293"/>
@@ -167,6 +176,7 @@
                     <navigationItem key="navigationItem" title="Filmzilla" id="0Ew-89-K2q"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="mTK-JK-eAn" id="VyE-ue-tIQ"/>
                         <outlet property="collectionView" destination="kwm-cD-cQs" id="WRx-HB-S05"/>
                         <outlet property="searchBar" destination="Oqr-Je-7J9" id="Iqs-Yq-ukz"/>
                         <outlet property="searchView" destination="ciG-Df-whg" id="EKI-Li-3Sa"/>
@@ -248,6 +258,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="5Lr-TK-Huz">
+                                <rect key="frame" x="0.0" y="89" width="414" height="717"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="a1e-7E-G6a"/>
@@ -256,6 +270,7 @@
                     <navigationItem key="navigationItem" id="X6a-n6-LkD"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="5Lr-TK-Huz" id="vBd-Ic-gcY"/>
                         <outlet property="tableView" destination="GUu-g7-CuL" id="GG2-EL-aLw"/>
                     </connections>
                 </viewController>
@@ -746,6 +761,10 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Button" image="icons8-heart-90 (1)"/>
                                             </button>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Akb-j7-U21">
+                                                <rect key="frame" x="149" y="113" width="117" height="69"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -765,6 +784,7 @@
                     <navigationItem key="navigationItem" id="Xbx-5p-flH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Akb-j7-U21" id="N3J-VA-OYd"/>
                         <outlet property="backdropView" destination="laF-cI-nO2" id="bDl-k0-4Mi"/>
                         <outlet property="detailsView" destination="1US-WE-Rv3" id="8JN-fK-SSw"/>
                         <outlet property="navigationItem" destination="Xbx-5p-flH" id="DAA-Fg-lJe"/>
@@ -845,6 +865,10 @@
                                             <segue destination="pVs-ep-3MB" kind="show" id="p8G-PJ-hOK"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="c1d-UK-7Xj">
+                                        <rect key="frame" x="148" y="122" width="117" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -858,6 +882,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ens-G6-f2x"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="c1d-UK-7Xj" id="IH6-JY-NTh"/>
                         <outlet property="backdropView" destination="MWQ-jB-lAM" id="yGm-gB-Bcl"/>
                         <outlet property="navigationItem" destination="ens-G6-f2x" id="oLV-2a-NsE"/>
                         <outlet property="posterView" destination="f0i-jS-5Rg" id="OyS-NK-Qg9"/>

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSMutableArray *watchList;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -27,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadFavList];
+    [self.activityIndicator startAnimating];
     if (![self connected]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
                message:@"Cannot fetch movies"
@@ -73,6 +75,7 @@
                   [self.tableView reloadData];
               }
            [self.refreshControl endRefreshing];
+           [self.activityIndicator stopAnimating];
           }];
        [task resume];
 }

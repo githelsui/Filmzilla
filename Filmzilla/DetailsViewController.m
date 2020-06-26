@@ -52,7 +52,6 @@
                 [self.backdropView setImageWithURL:backdropURL];
                 self.backdropView.alpha = 1;
        }];
-    [self.activityIndicator stopAnimating];
 }
 
 - (void) loadPoster {

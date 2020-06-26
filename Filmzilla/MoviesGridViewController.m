@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -26,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.activityIndicator startAnimating];
     [self fetchMovies];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -57,7 +59,7 @@
                   self.filteredMovies = self.movies;
                   [self.collectionView reloadData];
               }
-          
+           [self.activityIndicator stopAnimating];
           }];
        [task resume];
 }
