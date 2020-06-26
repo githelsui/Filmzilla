@@ -278,6 +278,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Button" image="icons8-heart-90 (1)"/>
+                                                <connections>
+                                                    <action selector="favBtnTapped:" destination="R4O-1t-7A9" eventType="touchUpInside" id="o1E-KR-TEW"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vX-Pg-389">
                                                 <rect key="frame" x="143" y="352" width="245" height="21"/>

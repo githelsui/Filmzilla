@@ -70,7 +70,6 @@
 }
 
 - (void) loadInfo {
-    
     self.posterView.layer.cornerRadius = 25;
     self.posterView.layer.masksToBounds = true;
     self.detailsView.layer.cornerRadius = 40;
@@ -84,6 +83,16 @@
     }];
 }
 
+- (IBAction)favBtnTapped:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
+           message:nil
+    preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {}];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 
 #pragma mark - Navigation
