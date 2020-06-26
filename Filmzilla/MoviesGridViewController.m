@@ -11,10 +11,13 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSArray *filteredMovies;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIView *searchView;
 
 @end
 
@@ -25,6 +28,8 @@
     [self fetchMovies];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.searchBar.delegate = self;
+    self.filteredMovies = self.movies;
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     
@@ -36,6 +41,8 @@
     CGFloat itemWidth = self.collectionView.frame.size.width / postersPerLine;
     CGFloat itemHeight = 1.5 * itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
+    self.searchView.layer.cornerRadius = 25;
 }
 
 - (void)fetchMovies {
@@ -55,8 +62,6 @@
                   NSLog(@"%@", dataDictionary);
                   self.movies = dataDictionary[@"results"];
                   [self.collectionView reloadData];
-                  
-                  
               }
           
           }];
@@ -81,6 +86,30 @@
     cell.layer.borderColor = UIColor.whiteColor.CGColor;
     cell.layer.borderWidth = 3;
     return cell;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+
+    NSLog(@"%s", "search edited");
+//TODO: fix search bar (issue: how to search for the title within the array of movies)
+//                    for (NSDictionary *movie in self.movies){
+//                        NSLog(@"%@", movie[@"title"]);
+//                    }
+    
+     if (searchText.length != 0) {
+           //movies = array of all movies (must get @title within one movie)
+           NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *evaluatedObject, NSDictionary *bindings) {
+               return [evaluatedObject containsString:searchText];
+           }];
+         self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
+           
+           NSLog(@"%@", self.filteredMovies);
+           
+       }
+       else {
+           self.filteredMovies = self.movies;
+       }
+       [self.collectionView reloadData];
 }
 
 
