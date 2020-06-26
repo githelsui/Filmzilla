@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.backdropView.alpha = 0;
+    self.backdropView.alpha = 0;
     self.posterView.alpha = 0;
     [self loadInfo];
     [self loadBackDrop];
@@ -41,12 +41,10 @@
     if(self.movie[@"backdrop_path"]){
         NSString *backdropURLString = self.movie[@"backdrop_path"];
         fullBackDropURLString = [baseURLString stringByAppendingString:backdropURLString];
-        NSLog(@"%s", "backdrop");
     }
     else{
         NSString *posterURLString = self.movie[@"poster_path"];
         fullBackDropURLString = [baseURLString stringByAppendingString:posterURLString];
-        NSLog(@"%s", "poster");
     }
     NSURL *backdropURL = [NSURL URLWithString:fullBackDropURLString];
     [UIView animateWithDuration:0.5 animations:^{
@@ -92,6 +90,9 @@
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
+    [self.watchList addObject:self.movie];
+    [[NSUserDefaults standardUserDefaults] setObject:self.watchList forKey:@"Watchlist"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 

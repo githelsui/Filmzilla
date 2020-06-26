@@ -1,28 +1,29 @@
 //
-//  MoviesViewController.m
+//  WatchlistController.m
 //  Filmzilla
 //
 //  Created by Githel Lynn Suico on 6/24/20.
 //  Copyright © 2020 Githel Lynn Suico. All rights reserved.
 //
 
-#import "MoviesViewController.h"
+#import "WatchlistController.h"
 #import "MovieCell.h"
 #import "Reachability.h"
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface WatchlistController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) NSMutableArray *watchList;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation MoviesViewController
+@implementation WatchlistController
 
+BOOL movieFavorited;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +49,7 @@
 }
 
 - (void)fetchMovies {
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=37b02cea57828b7f45f8799e5aa0d345"];
+    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/upcoming?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US"];
        
        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
        
@@ -109,11 +110,10 @@
     }];
     
     
-//    movieFavorited = NO;
-    
+    movieFavorited = NO;
     cell.favBtn.tag = indexPath.row;
     [cell.favBtn addTarget:self action:@selector(favBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-//    [self saveFavMovie:movie];
+    [self saveFavMovie:movie];
     
     
     UIView *backgroundView = [[UIView alloc] init];
@@ -128,6 +128,17 @@
     return networkStatus != NotReachable;
 }
 
+//- (IBAction)favBtnTapped:(id)sender {
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
+//           message:nil
+//    preferredStyle:(UIAlertControllerStyleAlert)];
+//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+//                                                       style:UIAlertActionStyleDefault
+//                                                     handler:^(UIAlertAction * _Nonnull action) {}];
+//    [alert addAction:okAction];
+//    [self presentViewController:alert animated:YES completion:nil];
+//}
+
 -(void)favBtnClicked:(UIButton*)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
            message:nil
@@ -137,18 +148,18 @@
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
-//    movieFavorited = YES;
+    movieFavorited = YES;
 }
 
-//- (void)saveFavMovie:(NSDictionary*)movie {
-//    if(movieFavorited == YES){
-//        [self.watchList addObject:movie];
-//        NSLog(@"%@", movie);
-//    }
-//    else{
-//        NSLog(@"%s", "nothing favorited");
-//    }
-//}
+- (void)saveFavMovie:(NSDictionary*)movie {
+    if(movieFavorited == YES){
+        [self.watchList addObject:movie];
+        NSLog(@"%@", movie);
+    }
+    else{
+        NSLog(@"%s", "nothing favorited");
+    }
+}
 
 - (void)loadFavList{
     if(self.watchList){

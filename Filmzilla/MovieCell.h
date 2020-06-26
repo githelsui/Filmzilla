@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UIView *descView;
 @property (weak, nonatomic) IBOutlet UIButton *favBtn;
-
+@property long index;
 @end
 
 NS_ASSUME_NONNULL_END
