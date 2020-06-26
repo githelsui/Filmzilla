@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *reviewIntro;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationItem;
 
 @end
 
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self fetchReviews];
+    self.navigationItem.title = self.movie[@"title"];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 }

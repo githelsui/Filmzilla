@@ -387,6 +387,7 @@
                         <outlet property="activityIndicator" destination="ECU-m4-gfR" id="TS0-XQ-WJ0"/>
                         <outlet property="backdropView" destination="lwg-zh-WZg" id="QAN-DP-f4L"/>
                         <outlet property="detailsView" destination="Ftp-wf-gxg" id="hqK-sb-lcA"/>
+                        <outlet property="navigationItem" destination="NYh-se-FXt" id="xjh-Ng-PVQ"/>
                         <outlet property="posterView" destination="7kw-fc-EgC" id="KU1-fX-4s5"/>
                         <outlet property="rateLabel" destination="I6f-DI-uKA" id="qR7-xG-RUW"/>
                         <outlet property="releaseLabel" destination="2vX-Pg-389" id="Jjb-P9-fmk"/>
@@ -462,6 +463,7 @@
                     <navigationItem key="navigationItem" id="ewB-7D-LhB"/>
                     <connections>
                         <outlet property="headerView" destination="B1I-L9-Wzd" id="bCT-lp-vEU"/>
+                        <outlet property="navigationItem" destination="ewB-7D-LhB" id="Wgb-5u-Fnu"/>
                         <outlet property="reviewIntro" destination="KSy-VR-c6M" id="eig-HJ-Veo"/>
                         <outlet property="tableView" destination="djY-jG-NvI" id="FE8-DD-NHb"/>
                     </connections>
@@ -533,6 +535,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Ej-cH-aGb"/>
                     <connections>
+                        <outlet property="navigationItem" destination="1Ej-cH-aGb" id="mKF-iL-mlp"/>
                         <outlet property="reviewIntro" destination="gZ9-bC-0g2" id="vkU-i1-59M"/>
                         <outlet property="tableView" destination="OCl-i6-K3t" id="uof-Ch-ROo"/>
                     </connections>
@@ -605,6 +608,7 @@
                     <navigationItem key="navigationItem" id="ovY-YH-jcQ"/>
                     <connections>
                         <outlet property="headerView" destination="xA7-59-3zf" id="2d7-Jy-aEy"/>
+                        <outlet property="navigationItem" destination="ovY-YH-jcQ" id="FQN-Li-rDy"/>
                         <outlet property="reviewIntro" destination="4lf-Lg-UDg" id="BdS-RF-SUC"/>
                         <outlet property="tableView" destination="vDi-uj-cT7" id="0EZ-T9-xdL"/>
                     </connections>
@@ -763,6 +767,7 @@
                     <connections>
                         <outlet property="backdropView" destination="laF-cI-nO2" id="bDl-k0-4Mi"/>
                         <outlet property="detailsView" destination="1US-WE-Rv3" id="8JN-fK-SSw"/>
+                        <outlet property="navigationItem" destination="Xbx-5p-flH" id="DAA-Fg-lJe"/>
                         <outlet property="posterView" destination="DGF-RY-hp7" id="3iO-i0-v7o"/>
                         <outlet property="rateLabel" destination="ShV-UV-j8O" id="Jqs-88-PjV"/>
                         <outlet property="releaseLabel" destination="1En-Df-Bx5" id="Ic0-mf-YRT"/>
@@ -854,6 +859,7 @@
                     <navigationItem key="navigationItem" id="ens-G6-f2x"/>
                     <connections>
                         <outlet property="backdropView" destination="MWQ-jB-lAM" id="yGm-gB-Bcl"/>
+                        <outlet property="navigationItem" destination="ens-G6-f2x" id="oLV-2a-NsE"/>
                         <outlet property="posterView" destination="f0i-jS-5Rg" id="OyS-NK-Qg9"/>
                         <outlet property="rateLabel" destination="CgA-qa-Mnz" id="Tjh-He-ApI"/>
                         <outlet property="releaseLabel" destination="HXd-lw-Yz6" id="Mkg-5G-bCa"/>

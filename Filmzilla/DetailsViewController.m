@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *rateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *releaseLabel;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationItem;
 
 @end
 
@@ -68,6 +69,7 @@
 }
 
 - (void) loadInfo {
+    self.navigationItem.title = self.movie[@"title"];
     self.posterView.layer.cornerRadius = 25;
     self.posterView.layer.masksToBounds = true;
     self.detailsView.layer.cornerRadius = 40;
