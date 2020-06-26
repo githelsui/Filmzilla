@@ -69,6 +69,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descView" destination="tE3-4L-Rur" id="2Wk-oG-7s3"/>
+                                            <outlet property="favBtn" destination="jDj-C1-v9V" id="GgO-vZ-nii"/>
                                             <outlet property="posterView" destination="Bgf-eT-O8r" id="5f1-zU-hyT"/>
                                             <outlet property="synopsisLabel" destination="Q6a-bV-9b3" id="fsn-hp-iZu"/>
                                             <outlet property="titleLabel" destination="x31-PK-Kg3" id="PSL-UN-asl"/>

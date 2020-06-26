@@ -117,6 +117,14 @@
 
 
 - (IBAction)favBtnTapped:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
+           message:nil
+    preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {}];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
