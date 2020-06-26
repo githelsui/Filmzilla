@@ -7,10 +7,14 @@
 //
 
 #import "ReviewController.h"
+#import "ReviewCell.h"
 
-@interface ReviewController ()
+@interface ReviewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *reviews;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *reviewIntro;
 
 @end
 
@@ -19,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self fetchReviews];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
 
 - (void)fetchReviews {
@@ -42,19 +48,27 @@
            }
            else { //run if request is successful
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-
-               NSLog(@"%@", dataDictionary);
                self.reviews = dataDictionary[@"results"];
-               for (NSDictionary *review in self.reviews){
-                   NSLog(@"%@", review[@"author"]);
-               }
-               
+               if(self.reviews.count == 0)  self.reviewIntro.text = @"No Reviews";
+               [self.tableView reloadData];
            }
         
        }];
     [task resume];
+}
 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.reviews.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+     ReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewCell"];
+    NSDictionary *review = self.reviews[indexPath.row];
+    cell.authorLabel.text = review[@"author"];
+    cell.reviewLabel.text = review[@"content"];
+    return cell;
 }
 
 

@@ -23,6 +23,7 @@
 		CA9409C824A45F5F000558FC /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409C724A45F5F000558FC /* MoviesGridViewController.m */; };
 		CA9409CB24A46236000558FC /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409CA24A46236000558FC /* MovieCollectionCell.m */; };
 		CAC9A68C24A576CA00C8922C /* ReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC9A68B24A576CA00C8922C /* ReviewController.m */; };
+		CAC9A68F24A5857500C8922C /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC9A68E24A5857500C8922C /* ReviewCell.m */; };
 		CAF29AB424A43F3A004AC1CF /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF29AB324A43F39004AC1CF /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,8 @@
 		CA9409CA24A46236000558FC /* MovieCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
 		CAC9A68A24A576CA00C8922C /* ReviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewController.h; sourceTree = "<group>"; };
 		CAC9A68B24A576CA00C8922C /* ReviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewController.m; sourceTree = "<group>"; };
+		CAC9A68D24A5857500C8922C /* ReviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewCell.h; sourceTree = "<group>"; };
+		CAC9A68E24A5857500C8922C /* ReviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewCell.m; sourceTree = "<group>"; };
 		CAF29AB224A43F39004AC1CF /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		CAF29AB324A43F39004AC1CF /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		D82987F7A3AEBFB01DDEAFEF /* Pods-Filmzilla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmzilla.debug.xcconfig"; path = "Target Support Files/Pods-Filmzilla/Pods-Filmzilla.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				CA9409CA24A46236000558FC /* MovieCollectionCell.m */,
 				CAC9A68A24A576CA00C8922C /* ReviewController.h */,
 				CAC9A68B24A576CA00C8922C /* ReviewController.m */,
+				CAC9A68D24A5857500C8922C /* ReviewCell.h */,
+				CAC9A68E24A5857500C8922C /* ReviewCell.m */,
 			);
 			path = Filmzilla;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				CA893F0424A3D22B002B7117 /* MoviesViewController.m in Sources */,
 				CAF29AB424A43F3A004AC1CF /* DetailsViewController.m in Sources */,
 				CA9409CB24A46236000558FC /* MovieCollectionCell.m in Sources */,
+				CAC9A68F24A5857500C8922C /* ReviewCell.m in Sources */,
 				CA893EE024A3C755002B7117 /* main.m in Sources */,
 				CA893ED224A3C754002B7117 /* SceneDelegate.m in Sources */,
 				CA9409C824A45F5F000558FC /* MoviesGridViewController.m in Sources */,
