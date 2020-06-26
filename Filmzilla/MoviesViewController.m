@@ -97,12 +97,15 @@
     [UIView animateWithDuration:0.5 animations:^{
             [cell.posterView setImageWithURL:posterURL];
             cell.posterView.alpha = 1;
-        cell.titleLabel.alpha = 1;
-        cell.synopsisLabel.alpha = 1;
+            cell.titleLabel.alpha = 1;
+            cell.synopsisLabel.alpha = 1;
             cell.titleLabel.text = movie[@"title"];
             cell.synopsisLabel.text = movie[@"overview"];
     }];
     
+    UIView *backgroundView = [[UIView alloc] init];
+       backgroundView.backgroundColor = UIColor.whiteColor;
+       cell.selectedBackgroundView = backgroundView;
     return cell;
 }
 
@@ -125,13 +128,10 @@
      //Pass the selected object to the new view controller.
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    
     NSDictionary *movie = self.movies[indexPath.row];
-    
-    
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
-//    NSLog(@"Tapping on a movie!");
+    
 }
 
 
