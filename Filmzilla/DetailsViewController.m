@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UIView *detailsView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *rateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *releaseLabel;
 
 @end
 
@@ -28,6 +30,9 @@
     [self loadPoster];
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
+    double rating = [self.movie[@"vote_average"] doubleValue];
+    self.rateLabel.text = [NSString stringWithFormat:@"%.1f", rating];
+    self.releaseLabel.text = self.movie[@"release_date"];
     [self.synopsisLabel sizeToFit];
     self.posterView.layer.cornerRadius = 25;
     self.posterView.layer.masksToBounds = true;
