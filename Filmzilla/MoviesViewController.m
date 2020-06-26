@@ -103,6 +103,10 @@
 }
 
 
+- (IBAction)favBtnTapped:(id)sender {
+}
+
+
 #pragma mark - Navigation
 
  //In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -117,7 +121,7 @@
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
-    NSLog(@"Tapping on a movie!");
+//    NSLog(@"Tapping on a movie!");
 }
 
 
