@@ -8,7 +8,6 @@
 
 #import "WatchlistController.h"
 #import "MovieCell.h"
-#import "Reachability.h"
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
@@ -30,24 +29,12 @@ BOOL movieFavorited;
     [super viewDidLoad];
     [self loadFavList];
     [self.activityIndicator startAnimating];
-    if (![self connected]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
-               message:@"Cannot fetch movies"
-        preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * _Nonnull action) {}];
-        [alert addAction:okAction];
-        [self presentViewController:alert animated:YES completion:nil];
-    } else {
-           self.tableView.dataSource = self;
-           self.tableView.delegate = self;
-           
-           [self fetchMovies];
-           self.refreshControl = [[UIRefreshControl alloc] init];
-           [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-           [self.tableView addSubview:self.refreshControl];
-    }
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self fetchMovies];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
 }
 
 - (void)fetchMovies {
@@ -59,7 +46,15 @@ BOOL movieFavorited;
        
        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
               if (error != nil) { //error
-                  NSLog(@"%@", [error localizedDescription]);
+                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
+                                          message:@"Cannot fetch movies"
+                                   preferredStyle:(UIAlertControllerStyleAlert)];
+                                   UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                                      style:UIAlertActionStyleDefault
+                                                                                    handler:^(UIAlertAction * _Nonnull action) {}];
+                                   [alert addAction:okAction];
+                                   [self presentViewController:alert animated:YES completion:nil];
+                                   NSLog(@"%@", [error localizedDescription]);
               }
               else { //run if request is successful
                   NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -123,12 +118,6 @@ BOOL movieFavorited;
        backgroundView.backgroundColor = UIColor.whiteColor;
        cell.selectedBackgroundView = backgroundView;
     return cell;
-}
-
-- (BOOL)connected {
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
-    return networkStatus != NotReachable;
 }
 
 //- (IBAction)favBtnTapped:(id)sender {
