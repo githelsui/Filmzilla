@@ -122,10 +122,11 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-Mj-vkn">
                                                     <rect key="frame" x="0.0" y="0.0" width="181" height="293"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.96848052740000001" green="0.34119643129999999" blue="0.21046801670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="181" height="293"/>
                                         <connections>
                                             <outlet property="posterView" destination="Jae-Mj-vkn" id="8vE-or-mdS"/>

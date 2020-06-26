@@ -26,19 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.backdropView.alpha = 0;
+    self.posterView.alpha = 0;
+    [self loadInfo];
     [self loadBackDrop];
     [self loadPoster];
-    self.titleLabel.text = self.movie[@"title"];
-    self.synopsisLabel.text = self.movie[@"overview"];
-    double rating = [self.movie[@"vote_average"] doubleValue];
-    self.rateLabel.text = [NSString stringWithFormat:@"%.1f/10", rating];
-    self.releaseLabel.text = self.movie[@"release_date"];
-    [self.synopsisLabel sizeToFit];
-    self.posterView.layer.cornerRadius = 25;
-    self.posterView.layer.masksToBounds = true;
-    self.detailsView.layer.cornerRadius = 40;
-    self.detailsView.layer.masksToBounds = true;
-    
 }
 
 - (void) loadBackDrop {
@@ -57,7 +49,10 @@
         NSLog(@"%s", "poster");
     }
     NSURL *backdropURL = [NSURL URLWithString:fullBackDropURLString];
-    [self.backdropView setImageWithURL:backdropURL];
+    [UIView animateWithDuration:0.5 animations:^{
+                [self.backdropView setImageWithURL:backdropURL];
+                self.backdropView.alpha = 1;
+       }];
     [self.activityIndicator stopAnimating];
 }
 
@@ -67,8 +62,26 @@
     NSString *posterURLString = self.movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [self.posterView setImageWithURL:posterURL];
+    [UIView animateWithDuration:0.5 animations:^{
+                [self.posterView setImageWithURL:posterURL];
+                self.posterView.alpha = 1;
+       }];
     [self.activityIndicator stopAnimating];
+}
+
+- (void) loadInfo {
+    
+    self.posterView.layer.cornerRadius = 25;
+    self.posterView.layer.masksToBounds = true;
+    self.detailsView.layer.cornerRadius = 40;
+    self.detailsView.layer.masksToBounds = true;
+    double rating = [self.movie[@"vote_average"] doubleValue];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.titleLabel.text = self.movie[@"title"];
+        self.synopsisLabel.text = self.movie[@"overview"];
+        self.rateLabel.text = [NSString stringWithFormat:@"%.1f/10", rating];
+        self.releaseLabel.text = self.movie[@"release_date"];
+    }];
 }
 
 

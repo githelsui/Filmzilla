@@ -86,16 +86,24 @@
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    cell.titleLabel.text = movie[@"title"];
-    cell.synopsisLabel.text = movie[@"overview"];
-    cell.posterView.image = nil;
+    
+    cell.posterView.alpha = 0;
+    cell.titleLabel.alpha = 0;
+    cell.synopsisLabel.alpha = 0;
     cell.posterView.layer.cornerRadius = 35;
     cell.posterView.layer.masksToBounds = true;
-    [cell.posterView setImageWithURL:posterURL];
     cell.descView.layer.cornerRadius = 35;
     cell.descView.layer.masksToBounds = true;
-    return cell;
+    [UIView animateWithDuration:0.5 animations:^{
+            [cell.posterView setImageWithURL:posterURL];
+            cell.posterView.alpha = 1;
+        cell.titleLabel.alpha = 1;
+        cell.synopsisLabel.alpha = 1;
+            cell.titleLabel.text = movie[@"title"];
+            cell.synopsisLabel.text = movie[@"overview"];
+    }];
     
+    return cell;
 }
 
 - (BOOL)connected{

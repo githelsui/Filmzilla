@@ -49,7 +49,7 @@
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/popular?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US"];
        
        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-       
+    
        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
        
        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -76,15 +76,18 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
-    
     NSDictionary *movie = self.movies[indexPath.item];
-     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-     NSString *posterURLString = movie[@"poster_path"];
-     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-     [cell.posterView setImageWithURL:posterURL];
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     cell.layer.borderColor = UIColor.whiteColor.CGColor;
     cell.layer.borderWidth = 3;
+    cell.posterView.alpha = 0;
+    [UIView animateWithDuration:0.5 animations:^{
+               [cell.posterView setImageWithURL:posterURL];
+                cell.posterView.alpha = 1;
+       }];
     return cell;
 }
 
