@@ -183,7 +183,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Dd-Gt-uxp">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="476"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="478"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKh-aM-lmb">
@@ -191,14 +191,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-NI-kBG">
-                                                            <rect key="frame" x="24" y="24" width="326" height="56"/>
+                                                            <rect key="frame" x="24" y="8" width="326" height="56"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ges-VT-vMc">
-                                                            <rect key="frame" x="33" y="88" width="309" height="129"/>
+                                                            <rect key="frame" x="33" y="57" width="309" height="163"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque suscipit mattis tellus, in commodo erat venenatis a. Nullam congue eros.</string>
                                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="21"/>
