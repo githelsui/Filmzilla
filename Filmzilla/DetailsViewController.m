@@ -31,7 +31,7 @@
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
     double rating = [self.movie[@"vote_average"] doubleValue];
-    self.rateLabel.text = [NSString stringWithFormat:@"%.1f", rating];
+    self.rateLabel.text = [NSString stringWithFormat:@"%.1f/10", rating];
     self.releaseLabel.text = self.movie[@"release_date"];
     [self.synopsisLabel sizeToFit];
     self.posterView.layer.cornerRadius = 25;
@@ -44,8 +44,18 @@
 - (void) loadBackDrop {
      [self.activityIndicator startAnimating];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *backdropURLString = self.movie[@"backdrop_path"];
-    NSString *fullBackDropURLString = [baseURLString stringByAppendingString:backdropURLString];
+    NSString *fullBackDropURLString;
+    
+    if(self.movie[@"backdrop_path"]){
+        NSString *backdropURLString = self.movie[@"backdrop_path"];
+        fullBackDropURLString = [baseURLString stringByAppendingString:backdropURLString];
+        NSLog(@"%s", "backdrop");
+    }
+    else{
+        NSString *posterURLString = self.movie[@"poster_path"];
+        fullBackDropURLString = [baseURLString stringByAppendingString:posterURLString];
+        NSLog(@"%s", "poster");
+    }
     NSURL *backdropURL = [NSURL URLWithString:fullBackDropURLString];
     [self.backdropView setImageWithURL:backdropURL];
     [self.activityIndicator stopAnimating];

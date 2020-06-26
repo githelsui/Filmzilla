@@ -58,14 +58,16 @@
               }
               else { //run if request is successful
                   NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-
-                  NSLog(@"%@", dataDictionary);
-                  self.movies = dataDictionary[@"results"];
+                  
+                  NSArray *originalArr = dataDictionary[@"results"];
+                  NSArray *reversedArray = [[originalArr reverseObjectEnumerator] allObjects];
+                  
+                  self.movies = reversedArray;
+                  
                   for (NSDictionary *movie in self.movies){
                       NSLog(@"%@", movie[@"title"]);
                   }
-                  
-                  [self.tableView reloadData]; //reloadData method: call datasource methods again
+                  [self.tableView reloadData];
               }
            [self.refreshControl endRefreshing];
           }];
