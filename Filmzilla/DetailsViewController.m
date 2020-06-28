@@ -10,6 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "ReviewController.h"
 #import "TrailerViewController.h"
+#import "RecommendViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *releaseLabel;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationItem;
+@property (nonatomic,strong) NSString *movieId;
 
 @end
 
@@ -28,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.movieId = self.movie[@"id"];
     [self loadFavList];
     self.backdropView.alpha = 0;
     self.posterView.alpha = 0;
@@ -138,29 +141,43 @@
           reviewController.movie = self.movie;
           reviewController.movieURL = [self getReviewURL];
     }
+    else if([segue.identifier isEqualToString:@"RecommendSegue"]){
+             RecommendViewController *recController = [segue destinationViewController];
+             recController.movieURL = [self getRecURL];
+             recController.movie = self.movie;
+       }
 }
 
 - (NSString *)getReviewURL{
-     NSString *movieId = self.movie[@"id"];
      NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
-     NSString *movieIdString = [NSString stringWithFormat:@"%@", movieId];
+    NSString *movieIdString = [NSString stringWithFormat:@"%@", self.movieId];
      NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
      NSString *secondHalf = @"/reviews?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
      NSString *url = [firstHalf stringByAppendingString:secondHalf];
-     NSLog(@"Movie ID: %@", movieId);
+    NSLog(@"Movie ID: %@", self.movieId);
      NSLog(@"Video URL: %@", url);
     return url;
 }
 
 - (NSString *)getVideoURL{
-     NSString *movieId = self.movie[@"id"];
      NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
-     NSString *movieIdString = [NSString stringWithFormat:@"%@", movieId];
+    NSString *movieIdString = [NSString stringWithFormat:@"%@", self.movieId];
      NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
      NSString *secondHalf = @"/videos?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
      NSString *url = [firstHalf stringByAppendingString:secondHalf];
-    NSLog(@"Movie ID: %@", movieId);
+    NSLog(@"Movie ID: %@", self.movieId);
     NSLog(@"Video URL: %@", url);
+    return url;
+}
+
+- (NSString *)getRecURL{
+     NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
+    NSString *movieIdString = [NSString stringWithFormat:@"%@", self.movieId];
+     NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
+     NSString *secondHalf = @"/recommendations?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
+     NSString *url = [firstHalf stringByAppendingString:secondHalf];
+    NSLog(@"Movie ID: %@", self.movieId);
+     NSLog(@"Video URL: %@", url);
     return url;
 }
 

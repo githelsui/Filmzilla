@@ -8,8 +8,8 @@
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             uuid = "6AFEE7A6-64BE-4D52-9ACF-B8683838AF23"
-            shouldBeEnabled = "Yes"
-            condition = "-[UIViewController setMovie:]"
+            shouldBeEnabled = "No"
+            condition = "-[__NSCFConstantString stringByAppendingString:]: nil argument"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             breakpointStackSelectionBehavior = "1"
