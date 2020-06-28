@@ -44,14 +44,14 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories: <br />
-<img src="gif1.gif" width="250" height="350"/>
-<img src="gif2.gif" width="250" height="350"/>
-<img src="gif3.gif" width="250" height="350"/>
-<img src="gif4.gif" width="250" height="350"/>
-<img src="gif5.gif" width="250" height="350"/>
-<img src="gif6.gif" width="250" height="350"/>
-<img src="gif7.gif" width="250" height="350"/>
-<img src="gif8.gif" width="250" height="350"/>
+<img src="gif1.gif" width="250" height="497"/>
+<img src="gif2.gif" width="250" height="497"/>
+<img src="gif3.gif" width="250" height="497"/>
+<img src="gif4.gif" width="250" height="497"/>
+<img src="gif5.gif" width="250" height="497"/>
+<img src="gif6.gif" width="250" height="497"/>
+<img src="gif7.gif" width="250" height="497"/>
+<img src="gif8.gif" width="250" height="497"/>
 
 ## Notes
 
