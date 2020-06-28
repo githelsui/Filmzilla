@@ -116,12 +116,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UICollectionViewCell *tappedCell = sender;
-       NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
-       NSDictionary *movie = self.movies[indexPath.row];
-       DetailsViewController *detailsViewController = [segue destinationViewController];
-       detailsViewController.movie = movie;
-       NSLog(@"Tapping on a movie!");
+    if ([segue.identifier isEqualToString:@"InfoSegue"]) {
+          
+    }
+    else if([segue.identifier isEqualToString:@"DetailSegue"]){
+         UICollectionViewCell *tappedCell = sender;
+         NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+         NSDictionary *movie = self.movies[indexPath.row];
+         DetailsViewController *detailsViewController = [segue destinationViewController];
+         detailsViewController.movie = movie;
+    }
 }
 
 

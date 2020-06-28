@@ -22,6 +22,8 @@
 		CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893F0924A3FED3002B7117 /* MovieCell.m */; };
 		CA8C11F624A826E4004CDCC2 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */; };
 		CA8C11F824A827DA004CDCC2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C11F724A827DA004CDCC2 /* WebKit.framework */; };
+		CA8C11FC24A872B6004CDCC2 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C11FB24A872B6004CDCC2 /* AboutViewController.m */; };
+		CA8C11FF24A87735004CDCC2 /* GithubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C11FE24A87735004CDCC2 /* GithubViewController.m */; };
 		CA9409C824A45F5F000558FC /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409C724A45F5F000558FC /* MoviesGridViewController.m */; };
 		CA9409CB24A46236000558FC /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409CA24A46236000558FC /* MovieCollectionCell.m */; };
 		CAC9A68C24A576CA00C8922C /* ReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC9A68B24A576CA00C8922C /* ReviewController.m */; };
@@ -80,6 +82,10 @@
 		CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		CA8C11F724A827DA004CDCC2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CA8C11F924A838ED004CDCC2 /* CellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellDelegate.h; sourceTree = "<group>"; };
+		CA8C11FA24A872B6004CDCC2 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		CA8C11FB24A872B6004CDCC2 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		CA8C11FD24A87735004CDCC2 /* GithubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GithubViewController.h; sourceTree = "<group>"; };
+		CA8C11FE24A87735004CDCC2 /* GithubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GithubViewController.m; sourceTree = "<group>"; };
 		CA9409C624A45F5F000558FC /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
 		CA9409C724A45F5F000558FC /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		CA9409C924A46236000558FC /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 				CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */,
 				CA893ED924A3C755002B7117 /* Assets.xcassets */,
 				CA8C11F924A838ED004CDCC2 /* CellDelegate.h */,
+				CA8C11FA24A872B6004CDCC2 /* AboutViewController.h */,
+				CA8C11FB24A872B6004CDCC2 /* AboutViewController.m */,
+				CA8C11FD24A87735004CDCC2 /* GithubViewController.h */,
+				CA8C11FE24A87735004CDCC2 /* GithubViewController.m */,
 			);
 			path = Filmzilla;
 			sourceTree = "<group>";
@@ -470,8 +480,10 @@
 				CAC9A68F24A5857500C8922C /* ReviewCell.m in Sources */,
 				CA893EE024A3C755002B7117 /* main.m in Sources */,
 				CA893ED224A3C754002B7117 /* SceneDelegate.m in Sources */,
+				CA8C11FF24A87735004CDCC2 /* GithubViewController.m in Sources */,
 				CAC9A69224A5BD3000C8922C /* WatchlistController.m in Sources */,
 				CA9409C824A45F5F000558FC /* MoviesGridViewController.m in Sources */,
+				CA8C11FC24A872B6004CDCC2 /* AboutViewController.m in Sources */,
 				CAC9A68C24A576CA00C8922C /* ReviewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

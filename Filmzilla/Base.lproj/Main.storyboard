@@ -8,6 +8,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--About View Controller-->
+        <scene sceneID="xSq-3h-ueD">
+            <objects>
+                <viewController id="W0D-Mv-d4C" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D9r-P1-rhi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filmzilla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJX-ua-5ih">
+                                <rect key="frame" x="153" y="188" width="109" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="dmh-ce-ybh">
+                                <rect key="frame" x="141" y="50" width="133" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dR-V4-Ar7">
+                                <rect key="frame" x="58" y="252" width="298" height="392"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCk-z8-p32">
+                                <rect key="frame" x="149" y="700" width="117" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="icons8-github-96" translatesAutoresizingMaskIntoConstraints="NO" id="dsh-Ym-FwF">
+                                        <rect key="frame" x="30" y="-10" width="57" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="bfw-qc-MEf" appends="YES" id="uFa-Bp-Xz8"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developed by Githel Suico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fF-wI-4Kx">
+                                <rect key="frame" x="118" y="669" width="179" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MFP-L8-wRH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vE4-NM-3LE"/>
+                    <connections>
+                        <outlet property="aboutLabel" destination="6dR-V4-Ar7" id="cAh-Od-ufp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9le-oe-IGQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bfw-qc-MEf">
+                    <connections>
+                        <segue destination="2Vq-fc-Bp9" kind="show" identifier="GithubSegue" id="lDb-yb-YK8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="132" y="1769"/>
+        </scene>
         <!--Filmzilla-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -70,7 +136,7 @@
                                             <outlet property="posterView" destination="Bgf-eT-O8r" id="5f1-zU-hyT"/>
                                             <outlet property="synopsisLabel" destination="Q6a-bV-9b3" id="fsn-hp-iZu"/>
                                             <outlet property="titleLabel" destination="x31-PK-Kg3" id="PSL-UN-asl"/>
-                                            <segue destination="R4O-1t-7A9" kind="show" id="6C5-me-bOu"/>
+                                            <segue destination="R4O-1t-7A9" kind="show" identifier="DetailSegue" id="6C5-me-bOu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -98,7 +164,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="In Theaters" image="now_playing_tabbar_item" selectedImage="now_playing_tabbar_item" id="QJB-nh-ktU"/>
-                    <navigationItem key="navigationItem" title="Filmzilla" id="c91-qo-xO1"/>
+                    <navigationItem key="navigationItem" title="Filmzilla" id="c91-qo-xO1">
+                        <barButtonItem key="rightBarButtonItem" image="info_icon" id="1Yk-OY-m62">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="W0D-Mv-d4C" kind="presentation" identifier="InfoSegue" id="DdY-Tr-XbN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="luj-wW-8AE" id="HEY-Wg-Zfi"/>
@@ -151,7 +224,7 @@
                                         <size key="customSize" width="181" height="293"/>
                                         <connections>
                                             <outlet property="posterView" destination="Jae-Mj-vkn" id="8vE-or-mdS"/>
-                                            <segue destination="0mb-RB-k7Z" kind="show" id="My9-Xa-Ydj"/>
+                                            <segue destination="0mb-RB-k7Z" kind="show" identifier="DetailSegue" id="My9-Xa-Ydj"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -173,7 +246,14 @@
                         <viewLayoutGuide key="safeArea" id="xbT-7s-aLB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="icons8-search-30" id="yqh-Rn-gav"/>
-                    <navigationItem key="navigationItem" title="Filmzilla" id="0Ew-89-K2q"/>
+                    <navigationItem key="navigationItem" title="Filmzilla" id="0Ew-89-K2q">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info_icon" id="qlD-5z-GDU">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="W0D-Mv-d4C" kind="presentation" identifier="InfoSegue" id="tLe-Vl-hEX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="mTK-JK-eAn" id="VyE-ue-tIQ"/>
@@ -186,7 +266,7 @@
             </objects>
             <point key="canvasLocation" x="1246.376811594203" y="871.875"/>
         </scene>
-        <!--Watchlist-->
+        <!--Filmzilla-->
         <scene sceneID="8nX-Bs-sXt">
             <objects>
                 <viewController id="rJC-eG-9bh" customClass="WatchlistController" sceneMemberID="viewController">
@@ -239,7 +319,7 @@
                                             <outlet property="posterView" destination="6Dd-Gt-uxp" id="Tjd-Gn-Jcc"/>
                                             <outlet property="synopsisLabel" destination="ges-VT-vMc" id="Saz-2j-Jpk"/>
                                             <outlet property="titleLabel" destination="AcZ-NI-kBG" id="N3q-ah-fM5"/>
-                                            <segue destination="Yh1-jN-WhW" kind="show" id="62X-Bp-TOd"/>
+                                            <segue destination="Yh1-jN-WhW" kind="show" identifier="DetailSegue" id="62X-Bp-TOd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -274,7 +354,14 @@
                         <viewLayoutGuide key="safeArea" id="a1e-7E-G6a"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Watchlist" image="icons8-heart-30" id="MRL-VA-iEe"/>
-                    <navigationItem key="navigationItem" id="X6a-n6-LkD"/>
+                    <navigationItem key="navigationItem" title="Filmzilla" id="X6a-n6-LkD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info_icon" id="Wpo-9S-JhK">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="W0D-Mv-d4C" kind="presentation" identifier="InfoSegue" id="eL1-HO-L00"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="5Lr-TK-Huz" id="vBd-Ic-gcY"/>
@@ -538,6 +625,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgz-Sn-ub1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-571" y="2531"/>
+        </scene>
+        <!--Github View Controller-->
+        <scene sceneID="9tg-co-eME">
+            <objects>
+                <viewController id="2Vq-fc-Bp9" customClass="GithubViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qch-8W-igo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxl-8K-jcI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pHq-gX-Ca5">
+                                <rect key="frame" x="156" y="385" width="103" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0rq-tZ-Qtn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W61-3q-cWV"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="pHq-gX-Ca5" id="oNr-Kl-4SW"/>
+                        <outlet property="webView" destination="wxl-8K-jcI" id="brg-VY-Ry6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXv-Ix-YmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="3144.6428571428569"/>
         </scene>
         <!--Trailer View Controller-->
         <scene sceneID="3Hx-y1-aSP">
@@ -1004,13 +1126,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cbY-6N-YH8"/>
+        <segue reference="x3t-Qe-Z0f"/>
+        <segue reference="eL1-HO-L00"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="icons8-github-96" width="96" height="96"/>
         <image name="icons8-heart-30" width="30" height="30"/>
         <image name="icons8-heart-90 (1)" width="90" height="90"/>
         <image name="icons8-parchment-100" width="100" height="100"/>
         <image name="icons8-search-30" width="30" height="30"/>
+        <image name="info_icon" width="30" height="30"/>
+        <image name="launch_image" width="138" height="139"/>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
     </resources>
 </document>

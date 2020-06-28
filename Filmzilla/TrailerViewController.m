@@ -43,10 +43,8 @@
              else { //run if request is successful
                  NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                  self.videos = dataDictionary[@"results"];
-                 
                  if(self.videos.count == 0)  [self noMovie];
                  else {
-                     NSLog(@"%s", "Videos!");
                      // Convert the url String to a NSURL object.
                      NSURL *videoURL = [NSURL URLWithString:[self showVideo]];
 
