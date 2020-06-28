@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *emptyListMsg;
 
 @end
 
@@ -35,36 +36,11 @@
 }
 
 - (void)fetchMovies {
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/upcoming?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US"];
-       
-       NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-       
-       NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-       
-       NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-              if (error != nil) { //error
-                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
-                                          message:@"Cannot fetch movies"
-                                   preferredStyle:(UIAlertControllerStyleAlert)];
-                                   UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                                      style:UIAlertActionStyleDefault
-                                                                                    handler:^(UIAlertAction * _Nonnull action) {}];
-                                   [alert addAction:okAction];
-                                   [self presentViewController:alert animated:YES completion:nil];
-                                   NSLog(@"%@", [error localizedDescription]);
-              }
-              else { //run if request is successful
-                  self.movies = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
-                  [self.tableView reloadData];
-              }
-            [self.refreshControl endRefreshing];
-            [self.activityIndicator stopAnimating];
-          }];
-       [task resume];
-}
-
-- (void) emptyWatchList{
-    
+   self.movies = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
+   if(self.movies.count != 0) self.emptyListMsg.alpha = 0;
+   [self.tableView reloadData];
+   [self.refreshControl endRefreshing];
+   [self.activityIndicator stopAnimating];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

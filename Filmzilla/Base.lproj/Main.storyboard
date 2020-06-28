@@ -262,6 +262,13 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="717"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watchlist is empty. Refresh Page." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1q-RV-FIb">
+                                <rect key="frame" x="20" y="225" width="374" height="452"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="a1e-7E-G6a"/>
@@ -271,6 +278,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="5Lr-TK-Huz" id="vBd-Ic-gcY"/>
+                        <outlet property="emptyListMsg" destination="y1q-RV-FIb" id="AdU-vz-q7z"/>
                         <outlet property="tableView" destination="GUu-g7-CuL" id="GG2-EL-aLw"/>
                     </connections>
                 </viewController>
@@ -422,11 +430,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-717" y="1714"/>
+            <point key="canvasLocation" x="-1042" y="1714"/>
         </scene>
         <!--TrailerController-->
         <scene sceneID="NiA-ly-Bwh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqM-8x-kG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TrailerView" title="TrailerController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0qF-ZI-7Yy" customClass="TrailerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0u0-NN-fDk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -454,9 +463,8 @@
                         <outlet property="webkitView" destination="wxH-mJ-Wg3" id="Abv-re-ekg"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eqM-8x-kG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1591.304347826087" y="2530.5803571428569"/>
+            <point key="canvasLocation" x="-1610" y="2531"/>
         </scene>
         <!--ReviewController-->
         <scene sceneID="mOc-lS-ozs">
@@ -529,7 +537,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgz-Sn-ub1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="2531"/>
+            <point key="canvasLocation" x="-571" y="2531"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="3Hx-y1-aSP">
+            <objects>
+                <viewController id="YaB-Sl-RSk" customClass="TrailerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tWe-Iv-ENq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4V-WU-WcS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Xcn-7S-H2d">
+                                <rect key="frame" x="156" y="385" width="103" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qZP-tT-1Y3"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Xcn-7S-H2d" id="WZH-ja-D3A"/>
+                        <outlet property="webkitView" destination="U4V-WU-WcS" id="N3Y-Xd-BaO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Hy-eU-PqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730.43478260869574" y="2537.9464285714284"/>
         </scene>
         <!--Review Controller-->
         <scene sceneID="529-Z1-CYv">
@@ -601,7 +643,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="si6-mo-xgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="2531"/>
+            <point key="canvasLocation" x="1823" y="2531"/>
         </scene>
         <!--Review Controller-->
         <scene sceneID="TKQ-FQ-qKp">
@@ -782,7 +824,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="icons8-parchment-100"/>
                                                 <connections>
-                                                    <segue destination="S62-9a-ujx" kind="show" id="nAT-0v-ocP"/>
+                                                    <segue destination="S62-9a-ujx" kind="show" identifier="ReviewSegue" id="nAT-0v-ocP"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShV-UV-j8O">
@@ -812,9 +854,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-RY-hp7">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-RY-hp7">
                                         <rect key="frame" x="237" y="116" width="149" height="223"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="JCg-6n-lnx" appends="YES" id="bWu-vc-Sr9"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="GnK-Bp-m0e"/>
@@ -840,6 +886,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9t-W9-atq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JCg-6n-lnx">
+                    <connections>
+                        <action selector="trailerTapped:" destination="0mb-RB-k7Z" id="6yL-Nj-F2M"/>
+                        <segue destination="YaB-Sl-RSk" kind="presentation" identifier="TrailerSegue" id="x3t-Qe-Z0f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1244.9275362318842" y="1713.6160714285713"/>
         </scene>
@@ -906,7 +958,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="icons8-parchment-100"/>
                                         <connections>
-                                            <segue destination="pVs-ep-3MB" kind="show" id="p8G-PJ-hOK"/>
+                                            <segue destination="pVs-ep-3MB" kind="show" identifier="ReviewSegue" id="p8G-PJ-hOK"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="c1d-UK-7Xj">
@@ -916,9 +968,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0i-jS-5Rg">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0i-jS-5Rg">
                                 <rect key="frame" x="236" y="212" width="149" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DKb-Yy-J6t" appends="YES" id="oel-mB-pXX"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -937,10 +993,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moi-Eh-Os1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DKb-Yy-J6t">
+                    <connections>
+                        <action selector="trailerTapped:" destination="Yh1-jN-WhW" id="6KL-xv-McP"/>
+                        <segue destination="YaB-Sl-RSk" kind="presentation" identifier="TrailerSegue" id="cbY-6N-YH8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2434.7826086956525" y="1688.8392857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cbY-6N-YH8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="icons8-heart-30" width="30" height="30"/>
         <image name="icons8-heart-90 (1)" width="90" height="90"/>

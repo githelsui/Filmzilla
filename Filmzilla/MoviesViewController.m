@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadFavList];
+    [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]]; //resets userdefaults
     [self.activityIndicator startAnimating];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
