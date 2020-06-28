@@ -79,6 +79,7 @@
 		CA8C11F424A826E4004CDCC2 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
 		CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		CA8C11F724A827DA004CDCC2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CA8C11F924A838ED004CDCC2 /* CellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellDelegate.h; sourceTree = "<group>"; };
 		CA9409C624A45F5F000558FC /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
 		CA9409C724A45F5F000558FC /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		CA9409C924A46236000558FC /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
@@ -199,6 +200,7 @@
 				CA8C11F424A826E4004CDCC2 /* TrailerViewController.h */,
 				CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */,
 				CA893ED924A3C755002B7117 /* Assets.xcassets */,
+				CA8C11F924A838ED004CDCC2 /* CellDelegate.h */,
 			);
 			path = Filmzilla;
 			sourceTree = "<group>";

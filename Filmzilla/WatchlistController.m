@@ -23,11 +23,8 @@
 
 @implementation WatchlistController
 
-BOOL movieFavorited;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadFavList];
     [self.activityIndicator startAnimating];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -57,22 +54,17 @@ BOOL movieFavorited;
                                    NSLog(@"%@", [error localizedDescription]);
               }
               else { //run if request is successful
-                  NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                  
-                  NSArray *originalArr = dataDictionary[@"results"];
-                  NSArray *reversedArray = [[originalArr reverseObjectEnumerator] allObjects];
-                  
-                  self.movies = reversedArray;
-                  
-                  for (NSDictionary *movie in self.movies){
-                      NSLog(@"%@", movie[@"title"]);
-                  }
+                  self.movies = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
                   [self.tableView reloadData];
               }
-           [self.refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
             [self.activityIndicator stopAnimating];
           }];
        [task resume];
+}
+
+- (void) emptyWatchList{
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -80,13 +72,9 @@ BOOL movieFavorited;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     NSDictionary *movie = self.movies[indexPath.row];
-    
     cell.index = (long)indexPath.row;
-    NSLog(@"%li", (long)indexPath.row);
-    
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
@@ -106,30 +94,13 @@ BOOL movieFavorited;
             cell.titleLabel.text = movie[@"title"];
             cell.synopsisLabel.text = movie[@"overview"];
     }];
-    
-    
-    movieFavorited = NO;
-    cell.favBtn.tag = indexPath.row;
-    [cell.favBtn addTarget:self action:@selector(favBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self saveFavMovie:movie];
-    
-    
+//    cell.favBtn.tag = indexPath.row;
+//    [cell.favBtn addTarget:self action:@selector(favBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     UIView *backgroundView = [[UIView alloc] init];
-       backgroundView.backgroundColor = UIColor.whiteColor;
-       cell.selectedBackgroundView = backgroundView;
+    backgroundView.backgroundColor = UIColor.whiteColor;
+    cell.selectedBackgroundView = backgroundView;
     return cell;
 }
-
-//- (IBAction)favBtnTapped:(id)sender {
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
-//           message:nil
-//    preferredStyle:(UIAlertControllerStyleAlert)];
-//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-//                                                       style:UIAlertActionStyleDefault
-//                                                     handler:^(UIAlertAction * _Nonnull action) {}];
-//    [alert addAction:okAction];
-//    [self presentViewController:alert animated:YES completion:nil];
-//}
 
 -(void)favBtnClicked:(UIButton*)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
@@ -140,26 +111,6 @@ BOOL movieFavorited;
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
-    movieFavorited = YES;
-}
-
-- (void)saveFavMovie:(NSDictionary*)movie {
-    if(movieFavorited == YES){
-        [self.watchList addObject:movie];
-        NSLog(@"%@", movie);
-    }
-    else{
-        NSLog(@"%s", "nothing favorited");
-    }
-}
-
-- (void)loadFavList{
-    if(self.watchList){
-        self.watchList = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
-    }
-    else{
-          self.watchList = [[NSMutableArray alloc] init];
-    }
 }
 
 #pragma mark - Navigation

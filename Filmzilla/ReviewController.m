@@ -43,7 +43,6 @@
                if(self.reviews.count == 0)  self.reviewIntro.text = @"No Reviews";
                [self.tableView reloadData];
            }
-        
        }];
     [task resume];
 }
@@ -53,8 +52,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-     ReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewCell"];
+    ReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReviewCell"];
     NSDictionary *review = self.reviews[indexPath.row];
     cell.authorLabel.text = review[@"author"];
     cell.reviewLabel.text = review[@"content"];

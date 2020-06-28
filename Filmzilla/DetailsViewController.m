@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadFavList];
     self.backdropView.alpha = 0;
     self.posterView.alpha = 0;
     [self loadInfo];
@@ -83,7 +84,28 @@
 }
 
 - (IBAction)favBtnTapped:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject[@"title"] containsString:self.movie[@"title"]];
+    }];
+    NSArray *sameMovie = [self.watchList filteredArrayUsingPredicate:predicate];
+    if(sameMovie.count == 0){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
+               message:nil
+        preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {}];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        [self.watchList addObject:self.movie];
+        [[NSUserDefaults standardUserDefaults] setObject:self.watchList forKey:@"Watchlist"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else [self movieAlreadyInWatchlist];
+}
+
+- (void) movieAlreadyInWatchlist{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie is Already in Watchlist"
            message:nil
     preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
@@ -91,16 +113,15 @@
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
-    [self.watchList addObject:self.movie];
-    [[NSUserDefaults standardUserDefaults] setObject:self.watchList forKey:@"Watchlist"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    for(NSDictionary *movie in self.watchList){
-        NSLog(@"%@", movie);
-    }
 }
 
 - (IBAction)trailerTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"%@", self.movie[@"title"]);
+}
+
+- (void)loadFavList{
+    self.watchList = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
+    if(self.watchList == nil) self.watchList = [[NSMutableArray alloc] init];
 }
 
 #pragma mark - Navigation

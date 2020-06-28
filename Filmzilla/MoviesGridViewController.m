@@ -78,7 +78,6 @@
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
     NSDictionary *movie = self.filteredMovies[indexPath.item];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
@@ -119,10 +118,7 @@
     // Pass the selected object to the new view controller.
     UICollectionViewCell *tappedCell = sender;
        NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
-       
        NSDictionary *movie = self.movies[indexPath.row];
-       
-       
        DetailsViewController *detailsViewController = [segue destinationViewController];
        detailsViewController.movie = movie;
        NSLog(@"Tapping on a movie!");
