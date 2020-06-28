@@ -46,7 +46,7 @@
        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
               if (error != nil) { //error
                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
-                         message:@"Cannot fetch movies"
+                         message:@"Cannot Load Movies"
                   preferredStyle:(UIAlertControllerStyleAlert)];
                   UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                      style:UIAlertActionStyleDefault

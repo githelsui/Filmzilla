@@ -29,21 +29,58 @@
    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
              if (error != nil) { //error
-                 NSLog(@"%@", [error localizedDescription]);
+                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
+                        message:@"Cannot Load Movies"
+                 preferredStyle:(UIAlertControllerStyleAlert)];
+                 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {}];
+                 [alert addAction:okAction];
+                 [self presentViewController:alert animated:YES completion:nil];
              }
              else { //run if request is successful
                  NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                  self.videos = dataDictionary[@"results"];
-                 if(self.videos.count == 0)  NSLog(@"%s", "No Videos");
-                 else NSLog(@"%s", "Videos!");
+                 
+                 if(self.videos.count == 0)  [self noMovie];
+                 else {
+                     NSLog(@"%s", "Videos!");
+                     // Convert the url String to a NSURL object.
+                     NSURL *videoURL = [NSURL URLWithString:[self showVideo]];
+
+                     // Place the URL in a URL Request.
+                     NSURLRequest *request = [NSURLRequest requestWithURL:videoURL
+                                                              cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                          timeoutInterval:10.0];
+                     // Load Request into WebView.
+                     [self.webkitView loadRequest:request];
+                 }
+                 
+                
              }
           
          }];
       [task resume];
 }
 
-- (void)showVideo{
-    
+- (NSString *)showVideo{
+    NSDictionary *firstVid = self.videos[0];
+    NSString *website = @"https://www.youtube.com/watch?v=";
+    NSString *key = [NSString stringWithFormat:@"%@", firstVid[@"key"]];
+    NSString *finalURL = [website stringByAppendingString:key];
+    NSLog(@"%@", finalURL);
+    return finalURL;
+}
+
+- (void) noMovie{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Trailer Available"
+           message:nil
+    preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {}];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 /*
