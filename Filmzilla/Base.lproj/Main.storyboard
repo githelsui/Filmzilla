@@ -440,16 +440,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="reviewButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKK-AO-q27">
-                                                <rect key="frame" x="128" y="400" width="68" height="67"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="icons8-parchment-100"/>
-                                                <connections>
-                                                    <segue destination="Nyd-M3-gAD" kind="show" identifier="ReviewSegue" id="yAe-fc-Vap"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmw-Ff-vFD">
-                                                <rect key="frame" x="232" y="400" width="68" height="67"/>
+                                                <rect key="frame" x="269" y="402" width="60" height="62"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Button" image="icons8-heart-90 (1)"/>
@@ -471,6 +463,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkM-Fr-G2D">
+                                                <rect key="frame" x="91" y="405" width="51" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="icons8-menu-60"/>
+                                                <connections>
+                                                    <segue destination="jE8-YE-JZ3" kind="show" identifier="RecommendSegue" id="aGL-6i-KD7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="reviewButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKK-AO-q27">
+                                                <rect key="frame" x="178" y="402" width="59" height="62"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="icons8-parchment-100"/>
+                                                <connections>
+                                                    <segue destination="Nyd-M3-gAD" kind="show" identifier="ReviewSegue" id="yAe-fc-Vap"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -517,7 +525,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1042" y="1714"/>
+            <point key="canvasLocation" x="-1042.0289855072465" y="1713.6160714285713"/>
         </scene>
         <!--TrailerController-->
         <scene sceneID="NiA-ly-Bwh">
@@ -861,7 +869,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7e-zY-LWJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2615.9420289855075" y="2978.5714285714284"/>
+            <point key="canvasLocation" x="2620" y="2492"/>
         </scene>
         <!--Review Controller-->
         <scene sceneID="TKQ-FQ-qKp">
@@ -1050,7 +1058,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" backgroundImage="icons8-menu-60"/>
                                                 <connections>
-                                                    <segue destination="jE8-YE-JZ3" kind="show" identifier="RecommendedSegue" id="yXz-jj-glF"/>
+                                                    <segue destination="jE8-YE-JZ3" kind="show" identifier="RecommendSegue" id="yXz-jj-glF"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShV-UV-j8O">
@@ -1243,7 +1251,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yXz-jj-glF"/>
+        <segue reference="aGL-6i-KD7"/>
         <segue reference="x3t-Qe-Z0f"/>
         <segue reference="DdY-Tr-XbN"/>
     </inferredMetricsTieBreakers>
