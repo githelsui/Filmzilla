@@ -1,8 +1,8 @@
 //
-//  ReviewController.h
+//  TrailerViewController.h
 //  Filmzilla
 //
-//  Created by Githel Lynn Suico on 6/25/20.
+//  Created by Githel Lynn Suico on 6/27/20.
 //  Copyright © 2020 Githel Lynn Suico. All rights reserved.
 //
 
@@ -10,11 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ReviewController : UIViewController
-
-@property (nonatomic,strong) NSDictionary *movie;
+@interface TrailerViewController : UIViewController
 @property (nonatomic,strong) NSString *movieURL;
-
 @end
 
 NS_ASSUME_NONNULL_END

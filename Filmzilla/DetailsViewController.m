@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "ReviewController.h"
+#import "TrailerViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
@@ -97,7 +98,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (IBAction)posterTapped:(UITapGestureRecognizer *)sender {
+- (IBAction)trailerTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"%@", self.movie[@"title"]);
 //    [self performSegueWithIdentifier:@"TrailerSegue" sender:nil];
 }
@@ -106,15 +107,36 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    NSString *movieId = self.movie[@"id"];
-    ReviewController *reviewController = [segue destinationViewController];
-    reviewController.movie = self.movie;
-    reviewController.movieId = movieId;
+  NSLog(@"%s", "segue");
+//  ReviewController *reviewController = [segue destinationViewController];
+//  reviewController.movie = self.movie;
+//  reviewController.movieURL = [self getReviewURL];
+    TrailerViewController *trailerController = [segue destinationViewController];
+    trailerController.movieURL = [self getVideoURL];
 }
 
-
-- (IBAction)trailerTapped:(id)sender {
+- (NSString *)getReviewURL{
+     NSString *movieId = self.movie[@"id"];
+     NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
+     NSString *movieIdString = [NSString stringWithFormat:@"%@", movieId];
+     NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
+     NSString *secondHalf = @"/reviews?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
+     NSString *url = [firstHalf stringByAppendingString:secondHalf];
+     NSLog(@"Movie ID: %@", movieId);
+     NSLog(@"Video URL: %@", url);
+    return url;
 }
-@end
+
+- (NSString *)getVideoURL{
+     NSString *movieId = self.movie[@"id"];
+     NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
+     NSString *movieIdString = [NSString stringWithFormat:@"%@", movieId];
+     NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
+     NSString *secondHalf = @"/videos?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
+     NSString *url = [firstHalf stringByAppendingString:secondHalf];
+    NSLog(@"Movie ID: %@", movieId);
+    NSLog(@"Video URL: %@", url);
+    return url;
+}
+
+ @end

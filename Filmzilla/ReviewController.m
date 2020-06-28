@@ -30,20 +30,9 @@
 }
 
 - (void)fetchReviews {
-    NSLog(@"%@", self.movieId);
-    NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
-    
-    NSString *movieIdString = [NSString stringWithFormat:@"%@", self.movieId];
-    NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
-    
-    NSString *secondHalf = @"/reviews?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
-    NSString *combinedString = [firstHalf stringByAppendingString:secondHalf];
-    NSURL *url = [NSURL URLWithString:combinedString];
-    
+    NSURL *url = [NSURL URLWithString:self.movieURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    
-       NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) { //error
                NSLog(@"%@", [error localizedDescription]);
@@ -58,7 +47,6 @@
        }];
     [task resume];
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.reviews.count;

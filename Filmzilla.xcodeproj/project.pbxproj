@@ -20,6 +20,8 @@
 		CA893EF524A3C755002B7117 /* FilmzillaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893EF424A3C755002B7117 /* FilmzillaUITests.m */; };
 		CA893F0424A3D22B002B7117 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893F0324A3D22B002B7117 /* MoviesViewController.m */; };
 		CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893F0924A3FED3002B7117 /* MovieCell.m */; };
+		CA8C11F624A826E4004CDCC2 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */; };
+		CA8C11F824A827DA004CDCC2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C11F724A827DA004CDCC2 /* WebKit.framework */; };
 		CA9409C824A45F5F000558FC /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409C724A45F5F000558FC /* MoviesGridViewController.m */; };
 		CA9409CB24A46236000558FC /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9409CA24A46236000558FC /* MovieCollectionCell.m */; };
 		CAC9A68C24A576CA00C8922C /* ReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC9A68B24A576CA00C8922C /* ReviewController.m */; };
@@ -74,6 +76,9 @@
 		CA893F0324A3D22B002B7117 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		CA893F0824A3FED3002B7117 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		CA893F0924A3FED3002B7117 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		CA8C11F424A826E4004CDCC2 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
+		CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
+		CA8C11F724A827DA004CDCC2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CA9409C624A45F5F000558FC /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
 		CA9409C724A45F5F000558FC /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		CA9409C924A46236000558FC /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
@@ -94,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8C11F824A827DA004CDCC2 /* WebKit.framework in Frameworks */,
 				884EE63FC57FE98AD6FFE31E /* Pods_Filmzilla.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +126,7 @@
 		B6EB42F051AE819EE7143296 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA8C11F724A827DA004CDCC2 /* WebKit.framework */,
 				B5844830DC181569CEF23204 /* Pods_Filmzilla.framework */,
 				6DDF864730F2C1905A2A3596 /* Pods_Filmzilla_FilmzillaUITests.framework */,
 				804DB536E0C73E5A9BFFA693 /* Pods_FilmzillaTests.framework */,
@@ -181,7 +188,6 @@
 				CA9409C724A45F5F000558FC /* MoviesGridViewController.m */,
 				CA893EDE24A3C755002B7117 /* Info.plist */,
 				CA893EDF24A3C755002B7117 /* main.m */,
-				CA893ED924A3C755002B7117 /* Assets.xcassets */,
 				CA9409C924A46236000558FC /* MovieCollectionCell.h */,
 				CA9409CA24A46236000558FC /* MovieCollectionCell.m */,
 				CAC9A68A24A576CA00C8922C /* ReviewController.h */,
@@ -190,6 +196,9 @@
 				CAC9A68E24A5857500C8922C /* ReviewCell.m */,
 				CAC9A69024A5BD3000C8922C /* WatchlistController.h */,
 				CAC9A69124A5BD3000C8922C /* WatchlistController.m */,
+				CA8C11F424A826E4004CDCC2 /* TrailerViewController.h */,
+				CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */,
+				CA893ED924A3C755002B7117 /* Assets.xcassets */,
 			);
 			path = Filmzilla;
 			sourceTree = "<group>";
@@ -454,6 +463,7 @@
 				CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */,
 				CA893F0424A3D22B002B7117 /* MoviesViewController.m in Sources */,
 				CAF29AB424A43F3A004AC1CF /* DetailsViewController.m in Sources */,
+				CA8C11F624A826E4004CDCC2 /* TrailerViewController.m in Sources */,
 				CA9409CB24A46236000558FC /* MovieCollectionCell.m in Sources */,
 				CAC9A68F24A5857500C8922C /* ReviewCell.m in Sources */,
 				CA893EE024A3C755002B7117 /* main.m in Sources */,

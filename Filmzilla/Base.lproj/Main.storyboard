@@ -383,7 +383,7 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="bH1-X1-Str"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Gfg-F5-YMn"/>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-fc-EgC">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-fc-EgC">
                                 <rect key="frame" x="236" y="211" width="149" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -417,7 +417,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORb-ba-hxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="6zE-yU-xup">
                     <connections>
-                        <action selector="posterTapped:" destination="R4O-1t-7A9" id="gZa-eq-kcK"/>
+                        <action selector="trailerTapped:" destination="R4O-1t-7A9" id="3gQ-FJ-1n7"/>
                         <segue destination="0qF-ZI-7Yy" kind="presentation" identifier="TrailerSegue" id="8xa-2V-bbW"/>
                     </connections>
                 </tapGestureRecognizer>
@@ -427,13 +427,13 @@
         <!--TrailerController-->
         <scene sceneID="NiA-ly-Bwh">
             <objects>
-                <viewController title="TrailerController" id="0qF-ZI-7Yy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrailerView" title="TrailerController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0qF-ZI-7Yy" customClass="TrailerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0u0-NN-fDk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxH-mJ-Wg3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -445,15 +445,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="VI9-ii-78f"/>
                     </view>
+                    <connections>
+                        <outlet property="webkitView" destination="wxH-mJ-Wg3" id="Abv-re-ekg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqM-8x-kG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1590" y="2531"/>
+            <point key="canvasLocation" x="-1591.304347826087" y="2530.5803571428569"/>
         </scene>
-        <!--Review Controller-->
+        <!--ReviewController-->
         <scene sceneID="mOc-lS-ozs">
             <objects>
-                <viewController id="Nyd-M3-gAD" customClass="ReviewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewController" title="ReviewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nyd-M3-gAD" customClass="ReviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hck-nR-Da0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
