@@ -182,39 +182,16 @@
 		CA893ECC24A3C754002B7117 /* Filmzilla */ = {
 			isa = PBXGroup;
 			children = (
+				CA8C120424A890F3004CDCC2 /* Cells */,
+				CA8C120324A89073004CDCC2 /* ViewControllers */,
 				CA893ED624A3C754002B7117 /* Main.storyboard */,
 				CA893EDB24A3C755002B7117 /* LaunchScreen.storyboard */,
 				CA893ECD24A3C754002B7117 /* AppDelegate.h */,
 				CA893ECE24A3C754002B7117 /* AppDelegate.m */,
 				CA893ED024A3C754002B7117 /* SceneDelegate.h */,
 				CA893ED124A3C754002B7117 /* SceneDelegate.m */,
-				CA893F0224A3D22B002B7117 /* MoviesViewController.h */,
-				CA893F0324A3D22B002B7117 /* MoviesViewController.m */,
-				CA893F0824A3FED3002B7117 /* MovieCell.h */,
-				CA893F0924A3FED3002B7117 /* MovieCell.m */,
-				CAF29AB224A43F39004AC1CF /* DetailsViewController.h */,
-				CAF29AB324A43F39004AC1CF /* DetailsViewController.m */,
-				CA9409C624A45F5F000558FC /* MoviesGridViewController.h */,
-				CA9409C724A45F5F000558FC /* MoviesGridViewController.m */,
 				CA893EDE24A3C755002B7117 /* Info.plist */,
 				CA893EDF24A3C755002B7117 /* main.m */,
-				CA9409C924A46236000558FC /* MovieCollectionCell.h */,
-				CA9409CA24A46236000558FC /* MovieCollectionCell.m */,
-				CAC9A68A24A576CA00C8922C /* ReviewController.h */,
-				CAC9A68B24A576CA00C8922C /* ReviewController.m */,
-				CAC9A68D24A5857500C8922C /* ReviewCell.h */,
-				CAC9A68E24A5857500C8922C /* ReviewCell.m */,
-				CAC9A69024A5BD3000C8922C /* WatchlistController.h */,
-				CAC9A69124A5BD3000C8922C /* WatchlistController.m */,
-				CA8C11F424A826E4004CDCC2 /* TrailerViewController.h */,
-				CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */,
-				CA8C11F924A838ED004CDCC2 /* CellDelegate.h */,
-				CA8C11FA24A872B6004CDCC2 /* AboutViewController.h */,
-				CA8C11FB24A872B6004CDCC2 /* AboutViewController.m */,
-				CA8C11FD24A87735004CDCC2 /* GithubViewController.h */,
-				CA8C11FE24A87735004CDCC2 /* GithubViewController.m */,
-				CA8C120024A87EAD004CDCC2 /* RecommendViewController.h */,
-				CA8C120124A87EAD004CDCC2 /* RecommendViewController.m */,
 				CA893ED924A3C755002B7117 /* Assets.xcassets */,
 			);
 			path = Filmzilla;
@@ -236,6 +213,45 @@
 				CA893EF624A3C755002B7117 /* Info.plist */,
 			);
 			path = FilmzillaUITests;
+			sourceTree = "<group>";
+		};
+		CA8C120324A89073004CDCC2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA893F0224A3D22B002B7117 /* MoviesViewController.h */,
+				CA893F0324A3D22B002B7117 /* MoviesViewController.m */,
+				CAF29AB224A43F39004AC1CF /* DetailsViewController.h */,
+				CAF29AB324A43F39004AC1CF /* DetailsViewController.m */,
+				CA9409C624A45F5F000558FC /* MoviesGridViewController.h */,
+				CA9409C724A45F5F000558FC /* MoviesGridViewController.m */,
+				CAC9A69024A5BD3000C8922C /* WatchlistController.h */,
+				CAC9A69124A5BD3000C8922C /* WatchlistController.m */,
+				CAC9A68A24A576CA00C8922C /* ReviewController.h */,
+				CAC9A68B24A576CA00C8922C /* ReviewController.m */,
+				CA8C11F424A826E4004CDCC2 /* TrailerViewController.h */,
+				CA8C11F524A826E4004CDCC2 /* TrailerViewController.m */,
+				CA8C11FA24A872B6004CDCC2 /* AboutViewController.h */,
+				CA8C11FB24A872B6004CDCC2 /* AboutViewController.m */,
+				CA8C120024A87EAD004CDCC2 /* RecommendViewController.h */,
+				CA8C120124A87EAD004CDCC2 /* RecommendViewController.m */,
+				CA8C11FD24A87735004CDCC2 /* GithubViewController.h */,
+				CA8C11FE24A87735004CDCC2 /* GithubViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CA8C120424A890F3004CDCC2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CA9409C924A46236000558FC /* MovieCollectionCell.h */,
+				CA9409CA24A46236000558FC /* MovieCollectionCell.m */,
+				CAC9A68D24A5857500C8922C /* ReviewCell.h */,
+				CAC9A68E24A5857500C8922C /* ReviewCell.m */,
+				CA8C11F924A838ED004CDCC2 /* CellDelegate.h */,
+				CA893F0824A3FED3002B7117 /* MovieCell.h */,
+				CA893F0924A3FED3002B7117 /* MovieCell.m */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
