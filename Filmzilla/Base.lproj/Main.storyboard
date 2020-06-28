@@ -441,11 +441,16 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pAv-hJ-6ic">
+                                <rect key="frame" x="156" y="385" width="103" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="VI9-ii-78f"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="pAv-hJ-6ic" id="Rim-ko-YMm"/>
                         <outlet property="webkitView" destination="wxH-mJ-Wg3" id="Abv-re-ekg"/>
                     </connections>
                 </viewController>

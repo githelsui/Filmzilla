@@ -11,6 +11,7 @@
 
 @interface TrailerViewController ()
 @property (weak, nonatomic) IBOutlet WKWebView *webkitView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) NSArray *videos;
 @end
 
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.activityIndicator startAnimating];
     [self fetchReviews];
     // Do any additional setup after loading the view.
 }
@@ -55,10 +57,8 @@
                      // Load Request into WebView.
                      [self.webkitView loadRequest:request];
                  }
-                 
-                
              }
-          
+        [self.activityIndicator stopAnimating];
          }];
       [task resume];
 }

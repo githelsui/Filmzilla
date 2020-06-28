@@ -111,6 +111,7 @@
 //  ReviewController *reviewController = [segue destinationViewController];
 //  reviewController.movie = self.movie;
 //  reviewController.movieURL = [self getReviewURL];
+
     TrailerViewController *trailerController = [segue destinationViewController];
     trailerController.movieURL = [self getVideoURL];
 }
