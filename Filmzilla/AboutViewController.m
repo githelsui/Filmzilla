@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.aboutLabel.text = [NSString stringWithFormat:@"%s\n\n%s\n\n%s","Filmzilla lets you find movies currently playing in theaters near you.", "Add a movie you're interested in to your Watchlist by clicking the heart.", "Search for more movies, read up on reviews, and check out the movie recommendations."];
+    self.aboutLabel.text = [NSString stringWithFormat:@"%s\n\n%s\n\n%s","Filmzilla lets you find movies currently playing in theaters near you.", "Add a movie you're interested in to your Watchlist by clicking the heart.", "Search for movies, read up on reviews, and explore your movie recommendations."];
 }
 
 /*
