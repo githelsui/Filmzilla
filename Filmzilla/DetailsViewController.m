@@ -39,8 +39,7 @@
      [self.activityIndicator startAnimating];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *fullBackDropURLString;
-    
-    if(self.movie[@"backdrop_path"]){
+    if(self.movie[@"backdrop_path"] != nil){
         NSString *backdropURLString = self.movie[@"backdrop_path"];
         fullBackDropURLString = [baseURLString stringByAppendingString:backdropURLString];
     }
@@ -69,14 +68,13 @@
 }
 
 - (void) loadInfo {
-//    self.posterView.userInteractionEnabled = YES; what to do with this
-    self.navigationItem.title = self.movie[@"title"];
-    self.posterView.layer.cornerRadius = 25;
-    self.posterView.layer.masksToBounds = true;
-    self.detailsView.layer.cornerRadius = 40;
-    self.detailsView.layer.masksToBounds = true;
-    double rating = [self.movie[@"vote_average"] doubleValue];
-    [UIView animateWithDuration:0.5 animations:^{
+        self.navigationItem.title = self.movie[@"title"];
+        self.posterView.layer.cornerRadius = 25;
+        self.posterView.layer.masksToBounds = true;
+        self.detailsView.layer.cornerRadius = 40;
+        self.detailsView.layer.masksToBounds = true;
+        double rating = [self.movie[@"vote_average"] doubleValue];
+        [UIView animateWithDuration:0.5 animations:^{
         self.titleLabel.text = self.movie[@"title"];
         self.synopsisLabel.text = self.movie[@"overview"];
         self.rateLabel.text = [NSString stringWithFormat:@"%.1f/10", rating];
@@ -96,11 +94,13 @@
     [self.watchList addObject:self.movie];
     [[NSUserDefaults standardUserDefaults] setObject:self.watchList forKey:@"Watchlist"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    for(NSDictionary *movie in self.watchList){
+        NSLog(@"%@", movie);
+    }
 }
 
 - (IBAction)trailerTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"%@", self.movie[@"title"]);
-//    [self performSegueWithIdentifier:@"TrailerSegue" sender:nil];
 }
 
 #pragma mark - Navigation

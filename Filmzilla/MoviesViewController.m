@@ -146,9 +146,14 @@
 - (void)loadFavList{
     if(self.watchList){
         self.watchList = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
+        NSLog(@"%s", "Watchlist exists");
+        for(NSDictionary *movie in self.watchList){
+            NSLog(@"%@", movie);
+        }
     }
     else{
-          self.watchList = [[NSMutableArray alloc] init];
+        self.watchList = [[NSMutableArray alloc] init];
+        NSLog(@"%s", "Watchlist empty");
     }
 }
 
@@ -164,7 +169,6 @@
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
     detailsViewController.watchList = self.watchList;
-    
 }
 
 
