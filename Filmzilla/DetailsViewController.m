@@ -107,13 +107,16 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  NSLog(@"%s", "segue");
-//  ReviewController *reviewController = [segue destinationViewController];
-//  reviewController.movie = self.movie;
-//  reviewController.movieURL = [self getReviewURL];
-
-    TrailerViewController *trailerController = [segue destinationViewController];
-    trailerController.movieURL = [self getVideoURL];
+    NSLog(@"%s", "segue");
+    if ([segue.identifier isEqualToString:@"TrailerSegue"]) {
+          TrailerViewController *trailerController = [segue destinationViewController];
+          trailerController.movieURL = [self getVideoURL];
+    }
+    else if([segue.identifier isEqualToString:@"ReviewSegue"]){
+          ReviewController *reviewController = [segue destinationViewController];
+          reviewController.movie = self.movie;
+          reviewController.movieURL = [self getReviewURL];
+    }
 }
 
 - (NSString *)getReviewURL{

@@ -345,12 +345,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKK-AO-q27">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="reviewButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKK-AO-q27">
                                                 <rect key="frame" x="128" y="400" width="68" height="67"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="icons8-parchment-100"/>
                                                 <connections>
-                                                    <segue destination="Nyd-M3-gAD" kind="show" id="yAe-fc-Vap"/>
+                                                    <segue destination="Nyd-M3-gAD" kind="show" identifier="ReviewSegue" id="yAe-fc-Vap"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmw-Ff-vFD">
@@ -383,7 +383,7 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="bH1-X1-Str"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Gfg-F5-YMn"/>
                             </scrollView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-fc-EgC">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="trailerButton" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-fc-EgC">
                                 <rect key="frame" x="236" y="211" width="149" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
