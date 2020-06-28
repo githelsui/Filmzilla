@@ -708,11 +708,11 @@
             <objects>
                 <viewController id="S62-9a-ujx" customClass="ReviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XwR-Fs-MKJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="340" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OCl-i6-K3t">
-                                <rect key="frame" x="0.0" y="170" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="170" width="414" height="662"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -784,7 +784,7 @@
             <objects>
                 <viewController id="jE8-YE-JZ3" customClass="RecommendViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FN4-Xi-mB1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="721" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Vi-W7-ZAW">
@@ -1207,6 +1207,9 @@
                                         <rect key="frame" x="258" y="382" width="64" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="icons8-broken-heart-60"/>
+                                        <connections>
+                                            <action selector="deleteBtnTapped:" destination="Yh1-jN-WhW" eventType="touchUpInside" id="KLd-bW-lEH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvz-6O-Nj9">
                                         <rect key="frame" x="102" y="387" width="51" height="56"/>
@@ -1256,8 +1259,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aEk-OJ-g1V"/>
-        <segue reference="yXz-jj-glF"/>
-        <segue reference="x3t-Qe-Z0f"/>
+        <segue reference="eyu-ws-swr"/>
+        <segue reference="cbY-6N-YH8"/>
         <segue reference="DdY-Tr-XbN"/>
     </inferredMetricsTieBreakers>
     <resources>

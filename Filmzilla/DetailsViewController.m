@@ -107,6 +107,21 @@
     else [self movieAlreadyInWatchlist];
 }
 
+- (IBAction)deleteBtnTapped:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Removed from Watchlist"
+           message:nil
+    preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {}];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    [self.watchList removeObject:self.movie];
+    [[NSUserDefaults standardUserDefaults] setObject:self.watchList forKey:@"Watchlist"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 - (void) movieAlreadyInWatchlist{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie is Already in Watchlist"
            message:nil

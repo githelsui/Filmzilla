@@ -38,6 +38,7 @@
 - (void)fetchMovies {
    self.movies = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
    if(self.movies.count != 0) self.emptyListMsg.alpha = 0;
+    else self.emptyListMsg.alpha = 1;
    [self.tableView reloadData];
    [self.refreshControl endRefreshing];
    [self.activityIndicator stopAnimating];
