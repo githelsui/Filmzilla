@@ -44,32 +44,32 @@
 
 - (void)fetchMovies {
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/popular?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US"];
-       
-       NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     
-       NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-       
-       NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-              if (error != nil) { //error
-                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
-                                                                                message:@"Cannot Load Movies"
-                                                                         preferredStyle:(UIAlertControllerStyleAlert)];
-                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:^(UIAlertAction * _Nonnull action) {}];
-                [alert addAction:okAction];
-                [self presentViewController:alert animated:YES completion:nil];
-                NSLog(@"%@", [error localizedDescription]);
-              }
-              else { //run if request is successful
-                  NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                  self.movies = dataDictionary[@"results"];
-                  self.filteredMovies = self.movies;
-                  [self.collectionView reloadData];
-              }
-           [self.activityIndicator stopAnimating];
-          }];
-       [task resume];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error != nil) { //error
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
+                                                                           message:@"Cannot Load Movies"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {}];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        else { //run if request is successful
+            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.movies = dataDictionary[@"results"];
+            self.filteredMovies = self.movies;
+            [self.collectionView reloadData];
+        }
+        [self.activityIndicator stopAnimating];
+    }];
+    [task resume];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -88,16 +88,16 @@
     cell.layer.borderWidth = 3;
     cell.posterView.alpha = 0;
     [UIView animateWithDuration:0.5 animations:^{
-               [cell.posterView setImageWithURL:posterURL];
-                cell.posterView.alpha = 1;
-       }];
+        [cell.posterView setImageWithURL:posterURL];
+        cell.posterView.alpha = 1;
+    }];
     return cell;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length != 0) {
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
-        return [evaluatedObject[@"title"] containsString:searchText];
+            return [evaluatedObject[@"title"] containsString:searchText];
         }];
         self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
     }
@@ -117,14 +117,14 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"InfoSegue"]) {
-          
+        
     }
     else if([segue.identifier isEqualToString:@"DetailSegue"]){
-         UICollectionViewCell *tappedCell = sender;
-         NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
-         NSDictionary *movie = self.movies[indexPath.row];
-         DetailsViewController *detailsViewController = [segue destinationViewController];
-         detailsViewController.movie = movie;
+        UICollectionViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+        NSDictionary *movie = self.movies[indexPath.row];
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.movie = movie;
     }
 }
 

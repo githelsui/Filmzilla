@@ -36,12 +36,12 @@
 }
 
 - (void)fetchMovies {
-   self.movies = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
-   if(self.movies.count != 0) self.emptyListMsg.alpha = 0;
+    self.movies = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Watchlist"]];
+    if(self.movies.count != 0) self.emptyListMsg.alpha = 0;
     else self.emptyListMsg.alpha = 1;
-   [self.tableView reloadData];
-   [self.refreshControl endRefreshing];
-   [self.activityIndicator stopAnimating];
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+    [self.activityIndicator stopAnimating];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -64,15 +64,15 @@
     cell.descView.layer.cornerRadius = 35;
     cell.descView.layer.masksToBounds = true;
     [UIView animateWithDuration:0.5 animations:^{
-            [cell.posterView setImageWithURL:posterURL];
-            cell.posterView.alpha = 1;
-            cell.titleLabel.alpha = 1;
-            cell.synopsisLabel.alpha = 1;
-            cell.titleLabel.text = movie[@"title"];
-            cell.synopsisLabel.text = movie[@"overview"];
+        [cell.posterView setImageWithURL:posterURL];
+        cell.posterView.alpha = 1;
+        cell.titleLabel.alpha = 1;
+        cell.synopsisLabel.alpha = 1;
+        cell.titleLabel.text = movie[@"title"];
+        cell.synopsisLabel.text = movie[@"overview"];
     }];
-//    cell.favBtn.tag = indexPath.row;
-//    [cell.favBtn addTarget:self action:@selector(favBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    //    cell.favBtn.tag = indexPath.row;
+    //    [cell.favBtn addTarget:self action:@selector(favBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     UIView *backgroundView = [[UIView alloc] init];
     backgroundView.backgroundColor = UIColor.whiteColor;
     cell.selectedBackgroundView = backgroundView;
@@ -81,8 +81,8 @@
 
 -(void)favBtnClicked:(UIButton*)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
-           message:nil
-    preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                   message:nil
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
@@ -92,19 +92,19 @@
 
 #pragma mark - Navigation
 
- //In a storyboard-based application, you will often want to do a little preparation before navigation
+//In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"InfoSegue"]) {
-            
-      }
-      else if([segue.identifier isEqualToString:@"DetailSegue"]){
+        
+    }
+    else if([segue.identifier isEqualToString:@"DetailSegue"]){
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         NSDictionary *movie = self.movies[indexPath.row];
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.movie = movie;
         detailsViewController.watchList = self.watchList;
-      }
+    }
     
 }
 

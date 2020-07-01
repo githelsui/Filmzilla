@@ -32,35 +32,35 @@
 - (void)fetchMovies {
     NSURL *url = [NSURL URLWithString:self.movieURL];
     NSLog(@"Movie ID: %@", self.movie[@"id"]);
-       NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-       
-       NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-       
-       NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-              if (error != nil) { //error
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
-                         message:@"Cannot Load Movies"
-                  preferredStyle:(UIAlertControllerStyleAlert)];
-                  UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                     style:UIAlertActionStyleDefault
-                                                                   handler:^(UIAlertAction * _Nonnull action) {}];
-                  [alert addAction:okAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-                  NSLog(@"%@", [error localizedDescription]);
-              }
-              else { //run if request is successful
-                  NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                  self.movies = dataDictionary[@"results"];
-//                  for (NSDictionary *movie in self.movies){
-//                      NSLog(@"%@", movie[@"title"]);
-//                  }
-                  NSLog(@"%@", self.movies);
-                    if(self.movies.count == 0)  self.headerLabel.text = @"No Recommendations";
-                  [self.tableView reloadData];
-              }
-           [self.activityIndicator stopAnimating];
-          }];
-       [task resume];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error != nil) { //error
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
+                                                                           message:@"Cannot Load Movies"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {}];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        else { //run if request is successful
+            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.movies = dataDictionary[@"results"];
+            //                  for (NSDictionary *movie in self.movies){
+            //                      NSLog(@"%@", movie[@"title"]);
+            //                  }
+            NSLog(@"%@", self.movies);
+            if(self.movies.count == 0)  self.headerLabel.text = @"No Recommendations";
+            [self.tableView reloadData];
+        }
+        [self.activityIndicator stopAnimating];
+    }];
+    [task resume];
 }
 
 
@@ -100,15 +100,15 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   if ([segue.identifier isEqualToString:@"InfoSegue"]) {
-          
+    if ([segue.identifier isEqualToString:@"InfoSegue"]) {
+        
     }
     else if([segue.identifier isEqualToString:@"DetailSegue"]){
-         UITableViewCell *tappedCell = sender;
-         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-         NSDictionary *movie = self.movies[indexPath.row];
-         DetailsViewController *detailsViewController = [segue destinationViewController];
-         detailsViewController.movie = movie;
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        NSDictionary *movie = self.movies[indexPath.row];
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.movie = movie;
     }
 }
 

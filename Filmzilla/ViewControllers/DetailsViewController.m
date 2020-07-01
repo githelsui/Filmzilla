@@ -40,7 +40,7 @@
 }
 
 - (void) loadBackDrop {
-     [self.activityIndicator startAnimating];
+    [self.activityIndicator startAnimating];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *fullBackDropURLString;
     if(self.movie[@"backdrop_path"] != nil){
@@ -53,9 +53,9 @@
     }
     NSURL *backdropURL = [NSURL URLWithString:fullBackDropURLString];
     [UIView animateWithDuration:0.5 animations:^{
-                [self.backdropView setImageWithURL:backdropURL];
-                self.backdropView.alpha = 1;
-       }];
+        [self.backdropView setImageWithURL:backdropURL];
+        self.backdropView.alpha = 1;
+    }];
 }
 
 - (void) loadPoster {
@@ -65,20 +65,20 @@
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [UIView animateWithDuration:0.5 animations:^{
-                [self.posterView setImageWithURL:posterURL];
-                self.posterView.alpha = 1;
-       }];
+        [self.posterView setImageWithURL:posterURL];
+        self.posterView.alpha = 1;
+    }];
     [self.activityIndicator stopAnimating];
 }
 
 - (void) loadInfo {
-        self.navigationItem.title = self.movie[@"title"];
-        self.posterView.layer.cornerRadius = 25;
-        self.posterView.layer.masksToBounds = true;
-        self.detailsView.layer.cornerRadius = 40;
-        self.detailsView.layer.masksToBounds = true;
-        double rating = [self.movie[@"vote_average"] doubleValue];
-        [UIView animateWithDuration:0.5 animations:^{
+    self.navigationItem.title = self.movie[@"title"];
+    self.posterView.layer.cornerRadius = 25;
+    self.posterView.layer.masksToBounds = true;
+    self.detailsView.layer.cornerRadius = 40;
+    self.detailsView.layer.masksToBounds = true;
+    double rating = [self.movie[@"vote_average"] doubleValue];
+    [UIView animateWithDuration:0.5 animations:^{
         self.titleLabel.text = self.movie[@"title"];
         self.synopsisLabel.text = self.movie[@"overview"];
         self.rateLabel.text = [NSString stringWithFormat:@"%.1f/10", rating];
@@ -93,8 +93,8 @@
     NSArray *sameMovie = [self.watchList filteredArrayUsingPredicate:predicate];
     if(sameMovie.count == 0){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
-               message:nil
-        preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                       message:nil
+                                                                preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {}];
@@ -109,8 +109,8 @@
 
 - (IBAction)deleteBtnTapped:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Removed from Watchlist"
-           message:nil
-    preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                   message:nil
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
@@ -124,8 +124,8 @@
 
 - (void) movieAlreadyInWatchlist{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie is Already in Watchlist"
-           message:nil
-    preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                   message:nil
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
@@ -148,52 +148,52 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"%s", "segue");
     if ([segue.identifier isEqualToString:@"TrailerSegue"]) {
-          TrailerViewController *trailerController = [segue destinationViewController];
-          trailerController.movieURL = [self getVideoURL];
+        TrailerViewController *trailerController = [segue destinationViewController];
+        trailerController.movieURL = [self getVideoURL];
     }
     else if([segue.identifier isEqualToString:@"ReviewSegue"]){
-          ReviewController *reviewController = [segue destinationViewController];
-          reviewController.movie = self.movie;
-          reviewController.movieURL = [self getReviewURL];
+        ReviewController *reviewController = [segue destinationViewController];
+        reviewController.movie = self.movie;
+        reviewController.movieURL = [self getReviewURL];
     }
     else if([segue.identifier isEqualToString:@"RecommendSegue"]){
-             RecommendViewController *recController = [segue destinationViewController];
-             recController.movieURL = [self getRecURL];
-             recController.movie = self.movie;
-       }
+        RecommendViewController *recController = [segue destinationViewController];
+        recController.movieURL = [self getRecURL];
+        recController.movie = self.movie;
+    }
 }
 
 - (NSString *)getReviewURL{
-     NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
+    NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
     NSString *movieIdString = [NSString stringWithFormat:@"%@", self.movieId];
-     NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
-     NSString *secondHalf = @"/reviews?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
-     NSString *url = [firstHalf stringByAppendingString:secondHalf];
+    NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
+    NSString *secondHalf = @"/reviews?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
+    NSString *url = [firstHalf stringByAppendingString:secondHalf];
     NSLog(@"Movie ID: %@", self.movieId);
-     NSLog(@"Video URL: %@", url);
+    NSLog(@"Video URL: %@", url);
     return url;
 }
 
 - (NSString *)getVideoURL{
-     NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
+    NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
     NSString *movieIdString = [NSString stringWithFormat:@"%@", self.movieId];
-     NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
-     NSString *secondHalf = @"/videos?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
-     NSString *url = [firstHalf stringByAppendingString:secondHalf];
+    NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
+    NSString *secondHalf = @"/videos?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
+    NSString *url = [firstHalf stringByAppendingString:secondHalf];
     NSLog(@"Movie ID: %@", self.movieId);
     NSLog(@"Video URL: %@", url);
     return url;
 }
 
 - (NSString *)getRecURL{
-     NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
+    NSString *baseURLString = @"https://api.themoviedb.org/3/movie/";
     NSString *movieIdString = [NSString stringWithFormat:@"%@", self.movieId];
-     NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
-     NSString *secondHalf = @"/recommendations?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
-     NSString *url = [firstHalf stringByAppendingString:secondHalf];
+    NSString *firstHalf = [baseURLString stringByAppendingString:movieIdString];
+    NSString *secondHalf = @"/recommendations?api_key=37b02cea57828b7f45f8799e5aa0d345&language=en-US";
+    NSString *url = [firstHalf stringByAppendingString:secondHalf];
     NSLog(@"Movie ID: %@", self.movieId);
-     NSLog(@"Video URL: %@", url);
+    NSLog(@"Video URL: %@", url);
     return url;
 }
 
- @end
+@end

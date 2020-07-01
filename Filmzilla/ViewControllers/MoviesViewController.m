@@ -42,36 +42,36 @@
 
 - (void)fetchMovies {
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=37b02cea57828b7f45f8799e5aa0d345"];
-       
-       NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-       
-       NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-       
-       NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-              if (error != nil) { //error
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
-                         message:@"Cannot Load Movies"
-                  preferredStyle:(UIAlertControllerStyleAlert)];
-                  UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                     style:UIAlertActionStyleDefault
-                                                                   handler:^(UIAlertAction * _Nonnull action) {}];
-                  [alert addAction:okAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-                  NSLog(@"%@", [error localizedDescription]);
-              }
-              else { //run if request is successful
-                  NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                  self.movies = dataDictionary[@"results"];
-                  
-                  for (NSDictionary *movie in self.movies){
-                      NSLog(@"%@", movie[@"title"]);
-                  }
-                  [self.tableView reloadData];
-              }
-           [self.refreshControl endRefreshing];
-           [self.activityIndicator stopAnimating];
-          }];
-       [task resume];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error != nil) { //error
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Failure"
+                                                                           message:@"Cannot Load Movies"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {}];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        else { //run if request is successful
+            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.movies = dataDictionary[@"results"];
+            
+            for (NSDictionary *movie in self.movies){
+                NSLog(@"%@", movie[@"title"]);
+            }
+            [self.tableView reloadData];
+        }
+        [self.refreshControl endRefreshing];
+        [self.activityIndicator stopAnimating];
+    }];
+    [task resume];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -114,8 +114,8 @@
 
 -(void)favBtnClicked:(UIButton*)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Movie Added to Watchlist"
-           message:nil
-    preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                   message:nil
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {}];
@@ -139,19 +139,19 @@
 
 #pragma mark - Navigation
 
- //In a storyboard-based application, you will often want to do a little preparation before navigation
+//In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"InfoSegue"]) {
-             
-       }
-       else if([segue.identifier isEqualToString:@"DetailSegue"]){
-            UITableViewCell *tappedCell = sender;
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-            NSDictionary *movie = self.movies[indexPath.row];
-            DetailsViewController *detailsViewController = [segue destinationViewController];
-            detailsViewController.movie = movie;
-            detailsViewController.watchList = self.watchList;
-       }
+        
+    }
+    else if([segue.identifier isEqualToString:@"DetailSegue"]){
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        NSDictionary *movie = self.movies[indexPath.row];
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.movie = movie;
+        detailsViewController.watchList = self.watchList;
+    }
 }
 
 
