@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CellDelegate.h"
+#import "Movie.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property long index;
 @property (weak, nonatomic) id<CellDelegate>delegate;
 @property (assign, nonatomic) NSInteger cellIndex;
+@property (nonatomic, strong) Movie *movie;
 @end
 
 NS_ASSUME_NONNULL_END

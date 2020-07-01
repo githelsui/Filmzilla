@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self fetchReviews];
-    self.navigationItem.title = self.movie[@"title"];
+    self.navigationItem.title = self.movie.title;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 }

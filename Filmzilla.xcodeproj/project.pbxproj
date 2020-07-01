@@ -11,6 +11,7 @@
 		7E5154C45136E1237D76A903 /* Pods_Filmzilla_FilmzillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF864730F2C1905A2A3596 /* Pods_Filmzilla_FilmzillaUITests.framework */; };
 		884EE63FC57FE98AD6FFE31E /* Pods_Filmzilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5844830DC181569CEF23204 /* Pods_Filmzilla.framework */; };
 		CA3B181724ACF117007E66DA /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B181624ACF117007E66DA /* Movie.m */; };
+		CA3B181C24ACFD97007E66DA /* MovieApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3B181B24ACFD97007E66DA /* MovieApiManager.m */; };
 		CA893ECF24A3C754002B7117 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893ECE24A3C754002B7117 /* AppDelegate.m */; };
 		CA893ED224A3C754002B7117 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA893ED124A3C754002B7117 /* SceneDelegate.m */; };
 		CA893ED824A3C754002B7117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA893ED624A3C754002B7117 /* Main.storyboard */; };
@@ -62,6 +63,8 @@
 		C87C010C4FE660A6EAA8828E /* Pods-FilmzillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmzillaTests.debug.xcconfig"; path = "Target Support Files/Pods-FilmzillaTests/Pods-FilmzillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA3B181524ACF117007E66DA /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		CA3B181624ACF117007E66DA /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		CA3B181A24ACFD97007E66DA /* MovieApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieApiManager.h; sourceTree = "<group>"; };
+		CA3B181B24ACFD97007E66DA /* MovieApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieApiManager.m; sourceTree = "<group>"; };
 		CA893ECA24A3C754002B7117 /* Filmzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filmzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA893ECD24A3C754002B7117 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA893ECE24A3C754002B7117 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 			children = (
 				CA3B181524ACF117007E66DA /* Movie.h */,
 				CA3B181624ACF117007E66DA /* Movie.m */,
+				CA3B181A24ACFD97007E66DA /* MovieApiManager.h */,
+				CA3B181B24ACFD97007E66DA /* MovieApiManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA3B181C24ACFD97007E66DA /* MovieApiManager.m in Sources */,
 				CA893ECF24A3C754002B7117 /* AppDelegate.m in Sources */,
 				CA893F0A24A3FED3002B7117 /* MovieCell.m in Sources */,
 				CA3B181724ACF117007E66DA /* Movie.m in Sources */,

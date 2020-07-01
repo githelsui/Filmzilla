@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = self.movie[@"title"];
+    self.navigationItem.title = self.movie.title;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.activityIndicator startAnimating];
@@ -31,7 +31,6 @@
 
 - (void)fetchMovies {
     NSURL *url = [NSURL URLWithString:self.movieURL];
-    NSLog(@"Movie ID: %@", self.movie[@"id"]);
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];

@@ -10,6 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "ReviewController.h"
 #import "TrailerViewController.h"
+#import "Movie.h"
 #import "RecommendViewController.h"
 
 @interface DetailsViewController ()
@@ -30,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.movieId = self.movie[@"id"];
+    self.movieId = self.movie.movieId;
     [self loadFavList];
     self.backdropView.alpha = 0;
     self.posterView.alpha = 0;
@@ -41,54 +42,38 @@
 
 - (void) loadBackDrop {
     [self.activityIndicator startAnimating];
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *fullBackDropURLString;
-    if(self.movie[@"backdrop_path"] != nil){
-        NSString *backdropURLString = self.movie[@"backdrop_path"];
-        fullBackDropURLString = [baseURLString stringByAppendingString:backdropURLString];
-    }
-    else{
-        NSString *posterURLString = self.movie[@"poster_path"];
-        fullBackDropURLString = [baseURLString stringByAppendingString:posterURLString];
-    }
-    NSURL *backdropURL = [NSURL URLWithString:fullBackDropURLString];
     [UIView animateWithDuration:0.5 animations:^{
-        [self.backdropView setImageWithURL:backdropURL];
+        [self.backdropView setImageWithURL:self.movie.backdropUrl];
         self.backdropView.alpha = 1;
     }];
 }
 
 - (void) loadPoster {
     [self.activityIndicator startAnimating];
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = self.movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [UIView animateWithDuration:0.5 animations:^{
-        [self.posterView setImageWithURL:posterURL];
+        [self.posterView setImageWithURL:self.movie.posterUrl];
         self.posterView.alpha = 1;
     }];
     [self.activityIndicator stopAnimating];
 }
 
 - (void) loadInfo {
-    self.navigationItem.title = self.movie[@"title"];
+    self.navigationItem.title = self.movie.title;
     self.posterView.layer.cornerRadius = 25;
     self.posterView.layer.masksToBounds = true;
     self.detailsView.layer.cornerRadius = 40;
     self.detailsView.layer.masksToBounds = true;
-    double rating = [self.movie[@"vote_average"] doubleValue];
     [UIView animateWithDuration:0.5 animations:^{
-        self.titleLabel.text = self.movie[@"title"];
-        self.synopsisLabel.text = self.movie[@"overview"];
-        self.rateLabel.text = [NSString stringWithFormat:@"%.1f/10", rating];
-        self.releaseLabel.text = self.movie[@"release_date"];
+        self.titleLabel.text = self.movie.title;
+        self.synopsisLabel.text = self.movie.overview;
+        self.rateLabel.text = [NSString stringWithFormat:@"%.1f/10", self.movie.rating];
+        self.releaseLabel.text = self.movie.release_date;
     }];
 }
 
 - (IBAction)favBtnTapped:(id)sender {
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
-        return [evaluatedObject[@"title"] containsString:self.movie[@"title"]];
+        return [evaluatedObject[@"title"] containsString:self.movie.title];
     }];
     NSArray *sameMovie = [self.watchList filteredArrayUsingPredicate:predicate];
     if(sameMovie.count == 0){
@@ -134,7 +119,7 @@
 }
 
 - (IBAction)trailerTapped:(UITapGestureRecognizer *)sender {
-    NSLog(@"%@", self.movie[@"title"]);
+    NSLog(@"%@", self.movie.title);
 }
 
 - (void)loadFavList{
